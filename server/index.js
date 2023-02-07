@@ -14,6 +14,7 @@ config()
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(fileUpload({}))
 app.use('/api', router)
 
 // error handling
