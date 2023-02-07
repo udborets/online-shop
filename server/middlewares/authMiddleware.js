@@ -9,11 +9,11 @@ export default function (req, res, next) {
   }
   try {
     // headers rules are like " Bearer *token* so we split it by space"
-    const token = req.headers.authorisation.split(' ')[1];
+    const token = req.headers.authorization.split(' ')[1];
     if (!token) {
       return res.status(401).json({ message: "Пользователь не авторизован" })
     }
-    const decoded = jwt.verify(token, process.env.JWT_KEY)
+    const decoded = verify(token, process.env.JWT_KEY);
     req.user = decoded;
     next()
   }
