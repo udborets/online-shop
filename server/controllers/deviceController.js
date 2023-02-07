@@ -9,23 +9,33 @@ class DeviceController {
     try {
       const { name, price, brandId, typeId, info } = req.body;
       let { img } = req.files;
-      // generating img filename
       const fileName = v4() + '.jpg';
-      // adding img to static folder
       img.mv(path.resolve(path.resolve(), "server", "..", "static", fileName))
 
-      // creating device object 
-      // not setting rating because it's set to 0 by default
-      const device = await models.Device.create({ name, price, brandId, typeId, img: fileName })
-      return res.json(device)
+      const newDevice = await models.Device.create({ name, price, brandId, typeId, img: fileName })
+      return res.json(newDevice)
     }
     catch (err) {
       next(ApiError.badRequest(err.message))
     }
   }
-  // returning all devices by request
   async getAll(req, res) {
-
+    const { brandId, typeId } = req.query;
+    let devices;
+    switch (!!brandId, !!typeId) {
+      case (false, false):
+        devices = await models.Device.findAll();
+        return;
+      case (false, true):
+        devices = await models.Device.findAll({where: {typeId}});
+        return;
+      case (true, false):
+        devices = await models.Device.findAll({where: {brandId}});
+        return;
+      case (true, true):
+        devices = await models.Device.findAll();
+        return;
+    }
   }
   // returning one device by id in request
   async getOne(req, res) {

@@ -2,16 +2,14 @@ import models from '../models/models.js';
 import ApiError from '../errors/ApiError.js';
 
 class BrandController {
-  // creates brand in db by request
   async create(req, res) {
-    const { name } = req.body;
-    const brand = await models.Brand.create({ name });
-    return res.json(brand);
+    const { brandName } = req.body;
+    const newBrand = await models.Brand.create({ brandName });
+    return res.json(newBrand);
   }
-  // returning all brands by request
   async getAll(req, res) {
-    const brands = await models.Brand.findAll();
-    return res.json(brands);
+    const allBrands = await models.Brand.findAll();
+    return res.json(allBrands);
   }
 }
 

@@ -27,7 +27,7 @@ app.use(fileUpload({}));
 // handling all api requests
 app.use('/api', router);
 
-// error handling
+// handling errors
 app.use(errorHandler);
 
 
@@ -39,7 +39,6 @@ async function start() {
     // connectig to database
     await sequelize.authenticate();
     await sequelize.sync();
-    // running server
     app.listen(PORT, () => console.log(`server is running on http://localhost:${PORT}`));
   }
   catch (err) {
