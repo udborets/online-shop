@@ -14,10 +14,19 @@ config()
 // setting our express app
 const app = express();
 app.use(cors());
+
+// allowing server to work with json
 app.use(express.json());
-app.use(express.static(path.resolve(path.resolve(),  'static')))
+
+// setting static folder for server
+app.use(express.static(path.resolve(path.resolve(), 'static')))
+
+// enabling opening files by name on server
 app.use(fileUpload({}));
+
+// handling all api requests
 app.use('/api', router);
+
 // error handling
 app.use(errorHandler);
 

@@ -2,6 +2,7 @@ import ApiError from '../errors/ApiError.js';
 import models from '../models/models.js';
 
 class UserController {
+
   async registration(req, res) {
 
   }

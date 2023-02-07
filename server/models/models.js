@@ -1,6 +1,7 @@
 import sequelize from '../db.js';
 import { DataTypes } from 'sequelize';
 
+// creating models of db tables
 const User = sequelize.define('user', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   email: { type: DataTypes.STRING, unique: true, allowNull: false },
@@ -52,7 +53,7 @@ const TypeBrand = sequelize.define('type_brand', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 })
 
-// setting table connection types
+// setting table connection types between each other
 User.hasOne(Basket);
 Basket.belongsTo(User);
 

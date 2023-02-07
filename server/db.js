@@ -1,5 +1,5 @@
-import {Sequelize} from 'sequelize';
-import {config} from 'dotenv';
+import { Sequelize } from 'sequelize';
+import { config } from 'dotenv';
 
 // setting .env variables
 config()
