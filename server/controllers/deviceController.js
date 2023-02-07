@@ -3,7 +3,6 @@ import path from "path";
 import { v4 } from 'uuid';
 import models from '../models/models.js';
 
-
 class DeviceController {
   async create(req, res, next) {
     try {
