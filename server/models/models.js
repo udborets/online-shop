@@ -48,12 +48,11 @@ const DeviceInfo = sequelize.define('device_info', {
   description: { type: DataTypes.STRING, allowNull: false },
 });
 
-// setting table connection types
-
 const TypeBrand = sequelize.define('type_brand', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 })
 
+// setting table connection types
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
