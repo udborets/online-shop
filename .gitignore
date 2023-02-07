@@ -1,5 +1,8 @@
 # files
 .env
 
-# folders
+# dependencies
 node_modules
+
+#folder with images
+static
