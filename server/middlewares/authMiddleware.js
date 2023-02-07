@@ -4,9 +4,6 @@ import { config } from 'dotenv';
 config()
 
 export default function (req, res, next) {
-  if (req.method === "OPTIONS") {
-    next();
-  }
   try {
     // headers rules are like " Bearer *token* so we split it by space"
     const token = req.headers.authorization.split(' ')[1];
