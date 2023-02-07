@@ -1,11 +1,12 @@
 import express from 'express';
-import {config} from 'dotenv';
+import { config } from 'dotenv';
 import sequelize from './db.js';
 import models from './models/models.js';
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
 import router from './routes/index.js';
 import errorHandler from './middlewares/ErrorHandlingMiddleware.js';
+import path from 'path';
 
 // setting .env variables
 config()
@@ -14,9 +15,9 @@ config()
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.resolve(path.resolve(),  'static')))
 app.use(fileUpload({}));
 app.use('/api', router);
-
 // error handling
 app.use(errorHandler);
 
@@ -32,7 +33,7 @@ async function start() {
     // running server
     app.listen(PORT, () => console.log(`server is running on http://localhost:${PORT}`));
   }
-  catch (err){
+  catch (err) {
     // log if error
     console.log(err)
   }
