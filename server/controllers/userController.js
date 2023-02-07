@@ -1,6 +1,6 @@
 import ApiError from '../errors/ApiError.js';
 import models from '../models/models.js';
-import { hash } from "bcrypt";
+import { hash, compareSync } from "bcrypt";
 import jwt from 'jsonwebtoken';
 import { config } from 'dotenv';
 
@@ -35,11 +35,21 @@ class UserController {
     const hashPassword = await hash(password, 5);
     const user = await models.User.create({ email, role, password: hashPassword });
     const basket = await models.Basket.create({ userId: user.id });
-    const token = generateJWT(user.id, user.email, user.role)
+    const token = generateJWT(user.id, user.email, user.role);
     return res.json({ token });
   }
-  async login(req, res) {
-
+  async login(req, res, next) {
+    const { email, password } = req.body;
+    const user = await models.User.findOne({ where: { email } });
+    if (!user) {
+      return next(ApiError.internal('Пользователь с таким email не найден'));
+    }
+    let comparePassword = compareSync(password, user.password);
+    if (!comparePassword) {
+      return next(ApiError.internal('Неверный пароль'));
+    }
+    const token = generateJWT(user.id, user.email, user.role);
+    return res.json({ token })
   }
   async check(req, res, next) {
     const { id } = req.query;
