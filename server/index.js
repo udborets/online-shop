@@ -14,11 +14,11 @@ config()
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(fileUpload({}))
-app.use('/api', router)
+app.use(fileUpload({}));
+app.use('/api', router);
 
 // error handling
-app.use(errorHandler)
+app.use(errorHandler);
 
 
 // getting server port from .env
