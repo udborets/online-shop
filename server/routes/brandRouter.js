@@ -8,4 +8,4 @@ router.post('/', brandController.create);
 router.get('/', brandController.getAll);
 
 
-export default router
+export default router;

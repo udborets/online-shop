@@ -43,7 +43,7 @@ async function start() {
   }
   catch (err) {
     // log if error
-    console.log(err)
+    console.log(err);
   }
 }
 

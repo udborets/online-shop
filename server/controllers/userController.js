@@ -2,7 +2,6 @@ import ApiError from '../errors/ApiError.js';
 import models from '../models/models.js';
 
 class UserController {
-
   async registration(req, res) {
 
   }
@@ -12,9 +11,9 @@ class UserController {
   async check(req, res, next) {
     const { id } = req.query;
     if (!id) {
-      return next(ApiError.badRequest("Не указан ID"))
+      return next(ApiError.badRequest("Не указан ID"));
     }
-    res.json(id)
+    res.json(id);
   }
 }
 

@@ -3,8 +3,8 @@ import ApiError from '../errors/ApiError.js';
 
 class BrandController {
   async create(req, res) {
-    const { brandName } = req.body;
-    const newBrand = await models.Brand.create({ brandName });
+    const { name: brandName } = req.body;
+    const newBrand = await models.Brand.create({ name:brandName });
     return res.json(newBrand);
   }
   async getAll(req, res) {
