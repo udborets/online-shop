@@ -4,6 +4,7 @@ import sequelize from './db.js';
 import models from './models/models.js';
 import cors from 'cors';
 import router from './routes/index.js';
+import errorHandler from './middlewares/ErrorHandlingMiddleware.js';
 
 // setting .env variables
 config()
@@ -13,6 +14,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api', router)
+
+// error handling
+app.use(errorHandler)
 
 
 // getting server port from .env
