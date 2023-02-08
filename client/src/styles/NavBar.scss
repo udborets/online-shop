@@ -15,22 +15,24 @@
 }
 
 .nav-bar__title {
-  font-size: 3rem;
+  font-size: 2.4rem;
   text-decoration: none;
 }
 
 .nav-bar__links {
   display: flex;
   align-items:end;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .nav-bar__link {
   list-style-type: none;
   font-size: 1.2rem;
   height: fit-content;
-  &:not(:last-child) {
-    margin: 0 0.5rem 0 0;
-  }
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.4rem 0.8rem;
 }
 
 
