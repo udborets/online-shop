@@ -11,7 +11,7 @@ const NavBar = () => {
     <div className='nav-bar'>
       <div className="nav-bar__container">
         <NavLink to={RouteConsts.SHOP} className='nav-bar__title'>
-          Shop
+          Internet shop
         </NavLink>
         <div className="nav-bar__links">
           {
@@ -20,15 +20,15 @@ const NavBar = () => {
               <>
                 <NavLink
                   className='nav-bar__link'
-                  to={RouteConsts.SHOP}
+                  to={RouteConsts.ADMIN}
                 >
-                  Shop
+                  Admin panel
                 </NavLink>
                 <NavLink
                   className='nav-bar__link'
-                  to={RouteConsts.SHOP}
+                  to={RouteConsts.BASKET}
                 >
-                  Devices
+                  Basket
                 </NavLink>
               </>
               :
@@ -43,21 +43,22 @@ const NavBar = () => {
           }
         </div>
         {
-            user.isAuth
-              ?
-              <NavLink
-                className='nav-bar__link'
-                to={RouteConsts.LOGIN}
-              >
-                Log out</NavLink>
-              :
-              <NavLink
-                className='nav-bar__link auth'
-                to={RouteConsts.LOGIN}
-              >
-                Log in
-              </NavLink>
-          }
+          user.isAuth
+            ?
+            <NavLink
+              className='nav-bar__link'
+              to={RouteConsts.LOGIN}
+            >
+              Log out
+            </NavLink>
+            :
+            <NavLink
+              className='nav-bar__link auth'
+              to={RouteConsts.LOGIN}
+            >
+              Log in
+            </NavLink>
+        }
       </div>
     </div>
   )
