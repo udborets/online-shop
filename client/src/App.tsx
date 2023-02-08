@@ -1,15 +1,16 @@
-import './App.scss'
+import './styles/App.scss'
 import { BrowserRouter } from 'react-router-dom';
-import AppRouter from './components/AppRouter/AppRouter';
-import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
+import AppRouter from './components/AppRouter';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import React from 'react';
 
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <NavBar />
-      <AppRouter/>
+      <AppRouter />
       <Footer />
     </BrowserRouter>
   )
