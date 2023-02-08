@@ -2,7 +2,9 @@ import React from 'react'
 
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <div className='current-page'>
+      AdminPage
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const AuthPage = () => {
   return (
-    <div>AuthPage</div>
+    <div className='current-page'>AuthPage</div>
   )
 }
 
