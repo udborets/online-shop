@@ -1,8 +1,11 @@
 import React from 'react'
+import RegistrationField from './../components/RegistrationField';
 
 const AuthPage = () => {
   return (
-    <div className='current-page'>AuthPage</div>
+    <div className='current-page'>
+      <RegistrationField />
+    </div>
   )
 }
 
