@@ -47,14 +47,14 @@ const NavBar = () => {
             ?
             <NavLink
               className='nav-bar__link'
-              to={RouteConsts.LOGIN}
+              to={RouteConsts.REGISTRATION}
             >
               Log out
             </NavLink>
             :
             <NavLink
               className='nav-bar__link auth'
-              to={RouteConsts.LOGIN}
+              to={RouteConsts.REGISTRATION}
             >
               Log in
             </NavLink>
