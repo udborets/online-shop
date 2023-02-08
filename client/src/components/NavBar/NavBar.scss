@@ -6,7 +6,7 @@
   color-scheme: light dark;
   background-color: #242424;
   justify-content: space-between;
-  min-width:fit-content;
+  min-width:476px;
   white-space: nowrap;
 }
 
@@ -22,8 +22,9 @@
   display: flex;
   margin-left: 0;
   padding-left: 0;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
+  justify-content: space-around;
 }
 
 .nav-bar__link {
