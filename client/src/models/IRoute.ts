@@ -1,4 +1,4 @@
 export interface IRoute {
   path: string,
-  Component: () => JSX.Element
+  Component: () => JSX.Element,
 }
