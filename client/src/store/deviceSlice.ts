@@ -4,8 +4,11 @@ const userSlice = createSlice({
   name: "device",
   initialState: {
     types : [
-      {id: 1, name: 'frezer'},
-      {id: 2, name: 'phone'},
+      {id: 1, name: "Personal computers"},
+      {id: 2, name: 'Mobile phones'},
+      {id: 3, name: 'Laptops'},
+      {id: 4, name: 'Headphones'},
+      {id: 5, name: 'MP3 players'},
     ],
     brands: [
       {id: 1, name: 'samsung'},
@@ -24,20 +27,24 @@ const userSlice = createSlice({
       img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
       {id: 6, name: 'Apple iphone 6', price: 25000, rating: 1, 
       img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-    ]
+    ],
+    selectedType: {},
   },
   reducers: {
-    setTypes(state, types : any) {
-      state.types = types;
+    setTypes(state, action) {
+      state.types = action.payload.types;
     },
-    setBrands(state, brands: any) {
-      state.brands = brands;
+    setBrands(state, action) {
+      state.brands = action.payload.brands;
     },
-    setDevices(state, devices: any) {
-      state.devices = devices;
+    setDevices(state, action) {
+      state.devices = action.payload.devices;
     },
+    setSelectedType(state, action) {
+      state.selectedType = action.payload.type
+    }
   }
 })
 
-export const {setTypes, setBrands, setDevices} = userSlice.actions;
+export const {setTypes, setBrands, setDevices, setSelectedType} = userSlice.actions;
 export default userSlice.reducer;
