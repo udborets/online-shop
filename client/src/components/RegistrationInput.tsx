@@ -1,4 +1,3 @@
-import React from 'react'
 import IRegistrationInput from './../models/IRegistrationInput';
 
 const RegistrationInput = ({ text, type }: IRegistrationInput) => {

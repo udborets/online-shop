@@ -1,4 +1,3 @@
-import React from 'react'
 import TypeBar from './../components/TypeBar';
 
 const ShopPage = () => {

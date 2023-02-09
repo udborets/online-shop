@@ -1,3 +1,3 @@
 export interface ITypeProps {
-  children: string,
+  children: string;
 }

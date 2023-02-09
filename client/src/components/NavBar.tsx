@@ -1,9 +1,6 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { RouteConsts } from '../utils/consts';
 import '../styles/NavBar.scss';
-import { useSelector } from 'react-redux/es/exports';
-import IUserState from '../models/IUserState';
 import { useUser } from '../hooks/useUser';
 
 const NavBar = () => {
