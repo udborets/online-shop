@@ -4,9 +4,10 @@ import { RouteConsts } from '../utils/consts';
 import '../styles/NavBar.scss';
 import { useSelector } from 'react-redux/es/exports';
 import IUserState from '../models/IUserState';
+import { useUser } from '../hooks/useUser';
 
 const NavBar = () => {
-  const user = useSelector((state: IUserState) => state.user);
+  const { user, toggleUserAuth } = useUser();
   return (
     <div className='nav-bar'>
       <div className="nav-bar__container">
@@ -45,16 +46,18 @@ const NavBar = () => {
         {
           user.isAuth
             ?
-            <NavLink
-              className='nav-bar__link'
-              to={RouteConsts.REGISTRATION}
+
+            <button
+              onClick={toggleUserAuth}
+              className='nav-bar__link auth'
             >
               Log out
-            </NavLink>
+            </button>
+
             :
             <NavLink
               className='nav-bar__link auth'
-              to={RouteConsts.REGISTRATION}
+              to={RouteConsts.LOGIN}
             >
               Log in
             </NavLink>
