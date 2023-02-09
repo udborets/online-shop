@@ -10,7 +10,12 @@ const TypeBar = () => {
       <div className="type-bar__container">
         {
           devices.types.map((type) => (
-            <Type key={type.id}>{type.name}</Type>
+            <Type
+              key={type.id}
+              type={type}
+            >
+              {type.name}
+            </Type>
           ))
         }
       </div>
