@@ -9,11 +9,6 @@ import { RouteConsts } from '../utils/consts';
 
 const AppRouter = () => {
   const user = useSelector((state: IUserState) => state.user);
-  const dispatch = useDispatch();
-  function toggleIsAuth() {
-    dispatch(setIsAuth({ isAuth: !user.isAuth }));
-  }
-  console.log(user)
   return (
     <Routes>
       <Route path="*" element={<Navigate to={RouteConsts.SHOP} />} />
