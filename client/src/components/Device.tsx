@@ -1,10 +1,14 @@
 import { IDeviceProps } from '../models/IDeviceProps';
-import '../styles/DeviceComponent.scss'
-import star from '../static/star.png'
+import '../styles/DeviceComponent.scss';
+import star from '../static/star.png';
+import { useNavigate } from "react-router-dom"
+import { RouteConsts } from '../utils/consts';
+
 
 const DeviceComponent = ({ device }: IDeviceProps) => {
+  const navigate = useNavigate();
   return (
-    <div className='device'>
+    <div className='device' onClick={() => navigate(RouteConsts.DEVICE + '/' + device.id)}>
       <div className='device__container'>
         <img
           className='device__img'
