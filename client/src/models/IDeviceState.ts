@@ -1,10 +1,10 @@
 import { IType } from "./IType";
+import { IBrand } from './IBrand';
+import { IDevice } from './IDevice';
 
 export interface IDeviceState {
-  types: [{ id: number; name: string }];
-  brands: [{ id: number; name: string }];
-  devices: [
-    { id: number; name: string; price: number; rating: number; img: string }
-  ];
+  types: [IType];
+  brands: [IBrand];
+  devices: [IDevice];
   selectedType: IType;
 }
