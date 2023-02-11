@@ -1,4 +1,4 @@
-import TypeBar from './../components/TypeBar';
+import TypeBar from '../components/TypeBarComponent';
 
 const ShopPage = () => {
   return (

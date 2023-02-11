@@ -1,4 +1,4 @@
-import RegistrationField from './../components/RegistrationField';
+import RegistrationField from '../components/RegistrationFieldComponent';
 
 const AuthPage = () => {
   return (
