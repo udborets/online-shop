@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { IStore } from '../models/IStore';
 import { ITypeProps } from '../models/ITypeProps';
-import { useDevice } from './../hooks/useDevice';
+import { useDevice } from '../hooks/useDevice';
 
 const TypeBarType = ({ children, type }: ITypeProps) => {
   const { selectType } = useDevice();

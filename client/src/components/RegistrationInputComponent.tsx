@@ -1,4 +1,4 @@
-import IRegistrationInput from './../models/IRegistrationInput';
+import IRegistrationInput from '../models/IRegistrationInput';
 
 const RegistrationInput = ({ text, type }: IRegistrationInput) => {
   return (
