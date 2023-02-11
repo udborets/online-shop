@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux/es/exports';
-import Type from './TypeComponent';
+import Type from './Type';
 import '../styles/TypeBarComponent.scss'
 import { IStore } from '../models/IStore';
 
