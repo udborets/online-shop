@@ -1,4 +1,5 @@
 @import "reset";
+@import "pages";
 
 #root {
   display: flex;
@@ -14,13 +15,3 @@ html {
   background-color: #ffffffb0;
 }
 
-.current-page {
-  height:100%;
-  width: auto;
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-}
