@@ -7,4 +7,5 @@ export interface IDeviceState {
   brands: [IBrand];
   devices: [IDevice];
   selectedType: IType;
+  selectedBrand: IBrand;
 }
