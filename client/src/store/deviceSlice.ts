@@ -1,34 +1,65 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "device",
   initialState: {
-    types : [
-      {id: 1, name: "Personal computers"},
-      {id: 2, name: 'Mobile phones'},
-      {id: 3, name: 'Laptops'},
-      {id: 4, name: 'Headphones'},
-      {id: 5, name: 'MP3 players'},
+    types: [
+      { id: 1, name: "Personal computers" },
+      { id: 2, name: "Mobile phones" },
+      { id: 3, name: "Laptops" },
+      { id: 4, name: "Headphones" },
+      { id: 5, name: "MP3 players" },
     ],
     brands: [
-      {id: 1, name: 'samsung'},
-      {id: 2, name: 'xiaomi'},
+      { id: 1, name: "samsung" },
+      { id: 2, name: "xiaomi" },
     ],
     devices: [
-      {id: 1, name: 'Apple iphone 1', price: 25000, rating: 2, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-      {id: 2, name: 'Apple iphone 2', price: 25000, rating: 0, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-      {id: 3, name: 'Apple iphone 3', price: 25000, rating: 2, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-      {id: 4, name: 'Apple iphone 4', price: 25000, rating: 4, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-      {id: 5, name: 'Apple iphone 5', price: 25000, rating: 3, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
-      {id: 6, name: 'Apple iphone 6', price: 25000, rating: 1, 
-      img: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'},
+      {
+        id: 1,
+        name: "Apple iphone 1",
+        price: 25000,
+        rating: 2,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
+      {
+        id: 2,
+        name: "Apple iphone 2",
+        price: 25000,
+        rating: 0,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
+      {
+        id: 3,
+        name: "Apple iphone 3",
+        price: 25000,
+        rating: 2,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
+      {
+        id: 4,
+        name: "Apple iphone 4",
+        price: 25000,
+        rating: 4,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
+      {
+        id: 5,
+        name: "Apple iphone 5",
+        price: 25000,
+        rating: 3,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
+      {
+        id: 6,
+        name: "Apple iphone 6",
+        price: 25000,
+        rating: 1,
+        img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+      },
     ],
     selectedType: {},
+    selectedBrand: {},
   },
   reducers: {
     setTypes(state, action) {
@@ -41,10 +72,19 @@ const userSlice = createSlice({
       state.devices = action.payload.devices;
     },
     setSelectedType(state, action) {
-      state.selectedType = action.payload.type
-    }
-  }
-})
+      state.selectedType = action.payload.type;
+    },
+    setSelectedBrand(state, action) {
+      state.selectedBrand = action.payload.brand;
+    },
+  },
+});
 
-export const {setTypes, setBrands, setDevices, setSelectedType} = userSlice.actions;
+export const {
+  setTypes,
+  setBrands,
+  setDevices,
+  setSelectedType,
+  setSelectedBrand,
+} = userSlice.actions;
 export default userSlice.reducer;
