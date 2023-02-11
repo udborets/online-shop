@@ -1,0 +1,58 @@
+.device {
+  padding: 1rem 0.5rem;
+  border: 2px solid black;
+}
+
+.device__name {
+  font-size: 1.3rem;
+  max-width: 185px;
+  line-break:auto;
+  text-align: center;
+}
+
+.device__container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+}
+
+.device__img {
+  width: 200px;
+  height: auto;
+  margin: 0 0 10px 0;
+}
+
+.device__rating {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating__rate {
+  font-size: 1rem;
+  line-height: 1;
+  position: absolute;
+  top: 26px;
+  font-weight: 700;
+}
+
+.rating__img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+}
+
+.device__row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.device__price {
+  
+  font-size: 1.3rem;
+}
