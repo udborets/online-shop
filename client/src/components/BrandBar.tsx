@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux/es/exports';
 import { IStore } from '../models/IStore';
 import Brand from './Brand';
+import '../styles/BrandBar.scss'
 
 const BrandBar = () => {
   const brands = useSelector((state: IStore) => state.device.brands)
