@@ -1,6 +1,6 @@
 import { IType } from "./IType";
-import { IBrand } from './IBrand';
-import { IDevice } from './IDevice';
+import { IBrand } from "./IBrand";
+import { IDevice } from "./IDevice";
 
 export interface IDeviceState {
   types: [IType];

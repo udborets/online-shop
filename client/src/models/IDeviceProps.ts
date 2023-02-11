@@ -1,5 +1,5 @@
-import { IDevice } from './IDevice';
+import { IDevice } from "./IDevice";
 
 export interface IDeviceProps {
-  device: IDevice
+  device: IDevice;
 }

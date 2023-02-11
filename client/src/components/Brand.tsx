@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { IStore } from '../models/IStore';
 import { useDevice } from '../hooks/useDevice';
 import { IBrandProps } from '../models/IBrandProps';
-import '../styles/Brand.scss'
+import '../styles/Brand.scss';
 
 const TypeBarType = ({ children, brand }: IBrandProps) => {
   const { selectBrand } = useDevice();

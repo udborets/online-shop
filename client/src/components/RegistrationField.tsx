@@ -6,7 +6,6 @@ import RegistrationInput from './RegistrationInput';
 const RegistrationField = () => {
   const location = useLocation();
   const isLogin = location.pathname === RouteConsts.LOGIN;
-  console.log(location)
   return (
     <div className='registration'>
       <div className="registration__container">

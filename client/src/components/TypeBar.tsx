@@ -4,7 +4,7 @@ import '../styles/TypeBarComponent.scss'
 import { IStore } from '../models/IStore';
 
 const TypeBar = () => {
-  const devices = useSelector((state: IStore) => state.device)
+  const devices = useSelector((state: IStore) => state.device);
   return (
     <div className='type-bar'>
       <div className="type-bar__container">

@@ -1,7 +1,7 @@
 import { IDeviceProps } from '../models/IDeviceProps';
 import '../styles/DeviceComponent.scss';
 import star from '../static/star.png';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { RouteConsts } from '../utils/consts';
 
 

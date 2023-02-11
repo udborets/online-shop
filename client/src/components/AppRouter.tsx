@@ -13,9 +13,10 @@ const AppRouter = () => {
       {user.isAuth && authRoutes.map(({ path, Component }: IRoute) => (
         <Route key={path} element={<Component />} path={path} />
       ))}
-      {publicRoutes.map(({ path, Component }: IRoute) => (
-        <Route key={path} element={<Component />} path={path} />
-      ))}
+      {
+        publicRoutes.map(({ path, Component }: IRoute) => (
+          <Route key={path} element={<Component />} path={path} />
+        ))}
     </Routes>
   )
 }

@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux/es/exports';
 import { IStore } from '../models/IStore';
 import Brand from './Brand';
-import '../styles/BrandBar.scss'
+import '../styles/BrandBar.scss';
 
 const BrandBar = () => {
-  const brands = useSelector((state: IStore) => state.device.brands)
+  const brands = useSelector((state: IStore) => state.device.brands);
   return (
     <div className='brand-bar'>
       <div className="brand-bar__container">
