@@ -36,9 +36,5 @@ export const publicRoutes = [
   {
     path: RouteConsts.DEVICE + "/:id",
     Component: DevicePage,
-  },
-  {
-    path: RouteConsts.REGISTRATION,
-    Component: AuthPage,
-  }
+  },  
 ]
