@@ -1,21 +1,26 @@
 @import "reset";
 
 #root {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100vw;
 }
 
 html {
+  height: 100vh;
+  width: 100vw;
   background-color: #ffffffb0;
 }
 
 .current-page {
-  height: 100%;
+  height:100%;
+  width: auto;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
