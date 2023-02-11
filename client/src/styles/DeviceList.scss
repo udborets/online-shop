@@ -1,0 +1,9 @@
+.device-list {
+  display: flex;
+  flex-wrap: wrap;
+  width:fit-content;
+  height: 100%;
+  & .device {
+    margin: 10px 10px 0 0;
+  }
+}
