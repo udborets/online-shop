@@ -12,8 +12,10 @@ const ShopPage = () => {
   return (
     <div className='current-page shop-page'>
       <TypeBar />
-      <BrandBar />
-      <DeviceList />
+      <div className="shop-page__column">
+        <BrandBar />
+        <DeviceList />
+      </div>
     </div>
   )
 }
