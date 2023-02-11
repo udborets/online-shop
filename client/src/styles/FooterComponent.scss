@@ -1,8 +1,9 @@
 .footer {
-  height: 5%;
+  height: 36px;
   display: flex;
   flex-direction: column;
 }
+
 .footer__container {
   height: 100%;
   display: flex;
@@ -12,7 +13,8 @@
   background-color: #242424;
   justify-content: space-around;
   align-items: center;
-  & button{
+
+  & button {
     height: fit-content;
   }
 }
