@@ -1,6 +1,10 @@
 .device {
   padding: 1rem 0.5rem;
   border: 2px solid black;
+  width: 280px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
 }
 
 .device__name {
