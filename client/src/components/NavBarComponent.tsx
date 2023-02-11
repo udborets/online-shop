@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { RouteConsts } from '../utils/consts';
-import '../styles/NavBar.scss';
+import '../styles/NavBarComponent.scss';
 import { useUser } from '../hooks/useUser';
 
 const NavBar = () => {
