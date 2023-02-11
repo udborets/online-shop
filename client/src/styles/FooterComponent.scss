@@ -11,4 +11,8 @@
   color-scheme: light dark;
   background-color: #242424;
   justify-content: space-around;
+  align-items: center;
+  & button{
+    height: fit-content;
+  }
 }
