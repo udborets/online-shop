@@ -40,6 +40,7 @@
     line-height: 1.5;
     border-radius: 20px;
     padding: 0.2rem 1rem;
+
     &:focus {
       box-shadow: 0 0 10px black;
       outline: none;
@@ -64,9 +65,13 @@
   }
 
   & a {
-    color: rgb(78, 59, 255);
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: underline;
+    color: rgb(19, 0, 189);
+
+    &:hover {
+      color: rgb(22, 0, 224)
+    }
 
     &:active {
       color: rgb(16, 0, 156);
