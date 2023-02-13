@@ -10,9 +10,8 @@
   border: 0;
 }
 
-html,
-body {
-  height: 100%;
+body, html {
+  height:fit-content;
   width: 100%;
   font-size: 100%;
   line-height: 1;
@@ -21,6 +20,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 
 body {
   line-height: 1.5;
@@ -54,8 +54,9 @@ h6 {
   overflow-wrap: break-word;
 }
 
-a, a:visited{
-  color: inherit;
+a,
+a:visited {
+  color: none;
   text-decoration: none;
 }
 
