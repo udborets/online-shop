@@ -7,10 +7,18 @@
   justify-content: center;
 }
 
+.device__row {
+  display: flex;
+  width: 80%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .device__name {
   font-size: 1.3rem;
   max-width: 185px;
-  line-break:auto;
+  line-break: auto;
   text-align: center;
 }
 
@@ -25,38 +33,25 @@
   width: 200px;
   height: auto;
   margin: 0 0 10px 0;
+  display: flex;
 }
 
 .device__rating {
-  width: 60px;
-  height: 60px;
-  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content:left;
   align-items: center;
-}
-
-.rating__rate {
-  font-size: 1rem;
-  line-height: 1;
-  position: absolute;
-  top: 26px;
-  font-weight: 700;
 }
 
 .rating__img {
-  width: 60px;
-  height: 60px;
-  position: absolute;
+  width: 40px;
+  height: 40px;
+  
 }
 
-.device__row {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
+.rating__rate {
+  font-size: 1.3rem;
 }
+
 .device__price {
-  
   font-size: 1.3rem;
 }
