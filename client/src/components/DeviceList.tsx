@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux/es/exports';
 import { IStore } from './../models/IStore';
 import { IDevice } from './../models/IDevice';
-import Device from './Device';
+import Device from './DeviceItem';
 import '../styles/DeviceList.scss';
 
 
