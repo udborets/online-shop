@@ -13,5 +13,8 @@ export function useDevice() {
   const selectBrand = (brand: IBrand) => {
     dispatch(setSelectedBrand({ brand: brand }));
   };
-  return { device, selectType, selectBrand };
+  const getDeviceById = (id: number) => {
+    return device.devices.filter((device) => device.id === id)[0]
+  }
+  return { device, selectType, selectBrand, getDeviceById };
 }
