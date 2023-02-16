@@ -14,7 +14,7 @@
   transition: transform 0.2s;
   position: relative;
   outline: 2px solid var(--outline);
-  background: white;
+  background: var(--bg-secondary);
   padding: 10px;
 
   &:hover {
@@ -24,6 +24,7 @@
 
 .device__name {
   font-size: 1.3rem;
+  color: var(--text-black);
 }
 
 .device__row {
@@ -42,6 +43,7 @@
 .rating__rate {
   font-size: 1.3rem;
   font-weight: 700;
+  color: var(--text-black);
 }
 
 .rating__img {
@@ -59,10 +61,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  color: var(--text-black);
 }
 
 .device__price {
   font-size: 1.6rem;
   margin: 0 170px 10px 0;
   font-weight: 700;
+  color: var(--text-black);
 }

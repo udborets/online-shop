@@ -1,7 +1,7 @@
 .registration {
   height: 400px;
   width: 800px;
-  outline: 2px solid black;
+  outline: 2px solid var(--outline);
   border-radius: 20px;
   background: var(--bg-div);
 }
@@ -9,6 +9,7 @@
 .registration__title {
   text-align: center;
   font-size: 3rem;
+  color: var(--text-white)
 }
 
 .registration__container {
@@ -42,7 +43,7 @@
     height: 100%;
 
     &:focus {
-      outline: 2px solid black;
+      outline: 2px solid var(--outline);
       box-shadow: 0 0 20px 0px white;
     }
   }
