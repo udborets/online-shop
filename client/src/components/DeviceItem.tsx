@@ -11,6 +11,7 @@ const DeviceComponent = ({ device }: IDeviceProps) => {
       <div className='device__bg'></div>
       <div className='device__container'>
         <img
+          loading='lazy'
           onClick={() => navigate(RouteConsts.DEVICE + '/' + device.id)}
           className='device__img'
           src={device.img}
