@@ -45,9 +45,11 @@
 }
 
 .rating__img {
-  width: 40px;
-  z-index: 1;
+  width: 45px;
   height: 40px;
+  position: absolute;
+  top:2px;
+  left:2px;
 }
 
 .device__rating {
@@ -56,6 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .device__price {
