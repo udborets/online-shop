@@ -9,6 +9,7 @@ const Footer = () => {
           Footer
         </span>
         <AuthButton />
+        <a href="https://github.com/udborets/">My github</a>
       </div>
     </div>
   )
