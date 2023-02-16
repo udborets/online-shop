@@ -1,7 +1,11 @@
+import '../styles/AdminPage.scss';
+
 const AdminPage = () => {
   return (
     <div className='current-page'>
-      AdminPage
+      <button className='admin-btn'>Add type</button>
+      <button className='admin-btn'>Add brand</button>
+      <button className='admin-btn'>Add device</button>
     </div>
   )
 }
