@@ -1,18 +1,18 @@
 import BuyButton from './../components/BuyButton';
+import "../styles/DevicePage.scss";
+import '../components/RatingStars';
+import RatingStars from './../components/RatingStars';
+import { useDevice } from './../hooks/useDevice';
+import { useLocation } from 'react-router-dom';
 
 const DevicePage = () => {
-  const device = {
-    id: 6,
-    name: "Apple iphone 6",
-    price: 25000,
-    rating: 1,
-    img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
-  };
-
+  const path = useLocation().pathname.split('/');
+  const deviceId = Number.parseInt(path[path.length - 1]);
+  const device = useDevice().getDeviceById(deviceId);
   return (
     <div className='current-page device-page'>
       <div className="device-page__main">
-        <div className="device-page__name">
+        <div className="device-page__title">
           {device.name}
         </div>
         <img
@@ -23,6 +23,9 @@ const DevicePage = () => {
 
       </div>
       <div className="device-page__column">
+        <div className='device-page__rating'>
+          <RatingStars rating={device.rating}/>
+        </div>
         <BuyButton />
       </div>
     </div>
