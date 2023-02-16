@@ -1,0 +1,19 @@
+.admin-btn {
+  margin: 0 0 0px 130px;
+  background: var(--bg-button);
+  outline: 2px solid black;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-white);
+  transition: background 0.3s;
+
+  &:hover {
+    background: var(--bg-button-hover);
+  }
+
+  &:active {
+    background: var(--bg-button-active);
+  }
+}
