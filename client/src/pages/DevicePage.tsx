@@ -6,9 +6,15 @@ import { useDevice } from './../hooks/useDevice';
 import { useLocation } from 'react-router-dom';
 
 const DevicePage = () => {
-  const path = useLocation().pathname.split('/');
-  const deviceId = Number.parseInt(path[path.length - 1]);
-  const device = useDevice().getDeviceById(deviceId);
+  const description = [
+    {id: 1, title: 'helloing 1', description: 'baba'},
+    {id: 2, title: 'helloing 2', description: 'baba'},
+    {id: 3, title: 'helloing 3', description: 'baba'},
+    {id: 4, title: 'helloing 4', description: 'baba'},
+  ]
+  const path = useLocation().pathname.split('/'); //
+  const deviceId = Number.parseInt(path[path.length - 1]); //
+  const device = useDevice().getDeviceById(deviceId); //
   return (
     <div className='current-page device-page'>
       <div className="device-page__main">
@@ -16,6 +22,7 @@ const DevicePage = () => {
           {device.name}
         </div>
         <img
+          loading='lazy'
           className="device-page__img"
           src={device.img}
           alt=""
@@ -23,11 +30,15 @@ const DevicePage = () => {
 
       </div>
       <div className="device-page__column">
-        <div className='device-page__rating'>
           <RatingStars rating={device.rating}/>
-        </div>
         <BuyButton />
       </div>
+      <ul className='device-page__description'>
+        {description.map((el) => (
+        <li key={el.id}>
+          {el.title} : {el.description}
+        </li>))}
+      </ul>
     </div>
   )
 }
