@@ -4,6 +4,7 @@ const userSlice = createSlice({
   name: "device",
   initialState: {
     types: [
+      { id: -1, name: "Select all" },
       { id: 1, name: "Personal computers" },
       { id: 2, name: "Mobile phones" },
       { id: 3, name: "Laptops" },
@@ -11,6 +12,7 @@ const userSlice = createSlice({
       { id: 5, name: "MP3 players" },
     ],
     brands: [
+      { id: -1, name: "Select all" },
       { id: 1, name: "samsung" },
       { id: 2, name: "xiaomi" },
     ],
@@ -58,15 +60,15 @@ const userSlice = createSlice({
         img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
       },
       {
-        id: 6,
-        name: "Apple iphone 6",
+        id: 7,
+        name: "Apple iphone 7",
         price: 25000,
         rating: 1,
         img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
       },
       {
-        id: 6,
-        name: "Apple iphone 6",
+        id: 8,
+        name: "Apple iphone 8",
         price: 25000,
         rating: 1,
         img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",

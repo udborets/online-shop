@@ -1,6 +1,4 @@
 import { useState } from "react"
-import '../styles/BuyButton.scss'
-
 
 const BuyButton = () => {
   const [count, setCount] = useState<number>(0);

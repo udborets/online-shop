@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux/es/exports';
 import Type from './Type';
-import '../styles/TypeBarComponent.scss'
 import { IStore } from '../models/IStore';
+import '../styles/TypeBar.scss';
 
 const TypeBar = () => {
   const devices = useSelector((state: IStore) => state.device);

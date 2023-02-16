@@ -1,4 +1,4 @@
-.brand-bar__brand {
+.type-bar__type {
   font-size: 1.4rem;
   width: 200px;
   padding: 10px;
@@ -9,7 +9,7 @@
   color: var(--text-black);
   transition: color 0.3s;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -19,25 +19,21 @@
     z-index: -1;
     height: 100%;
     background: var(--bg-button-hover);
-    transform: scaleY(0);
-    transform-origin: 50% 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
     transition: transform 0.3s ease-out;
   }
   
   &:hover::before {
-    transform: scaleY(1);
+    transform: scaleX(1);
   }
   
   &:hover {
     color: var(--text-white);
   }
-
-  &:hover::before {
-    transform: scaleY(1);
-  }
 }
 
-.selected-brand {
+.selected-type {
   color: white;
   background: var(--bg-button-active);
 }

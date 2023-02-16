@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { RouteConsts } from '../utils/consts';
-import '../styles/NavBarComponent.scss';
 import { useUser } from '../hooks/useUser';
+import '../styles/NavBar.scss';
 
 const NavBar = () => {
   const { user, toggleUserAuth } = useUser();
@@ -28,6 +28,12 @@ const NavBar = () => {
                 >
                   Basket
                 </NavLink>
+                <NavLink
+                  className='nav-bar__link'
+                  to={RouteConsts.SHOP}
+                >
+                  Shop
+                </NavLink>
               </>
               :
               <>
@@ -46,14 +52,13 @@ const NavBar = () => {
 
             <button
               onClick={toggleUserAuth}
-              className='nav-bar__link auth'
+              className='auth-link'
             >
               Log out
             </button>
-
             :
             <NavLink
-              className='nav-bar__link auth'
+              className='auth-link'
               to={RouteConsts.LOGIN}
             >
               Log in

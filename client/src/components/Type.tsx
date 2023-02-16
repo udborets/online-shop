@@ -2,8 +2,9 @@ import { useSelector } from 'react-redux';
 import { IStore } from '../models/IStore';
 import { ITypeProps } from '../models/ITypeProps';
 import { useDevice } from '../hooks/useDevice';
+import '../styles/Type.scss';
 
-const TypeBarType = ({ children, type }: ITypeProps) => {
+const Type = ({ children, type }: ITypeProps) => {
   const { selectType } = useDevice();
   const devices = useSelector((state: IStore) => state.device);
   return (
@@ -16,4 +17,4 @@ const TypeBarType = ({ children, type }: ITypeProps) => {
   )
 }
 
-export default TypeBarType
+export default Type

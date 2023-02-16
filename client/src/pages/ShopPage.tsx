@@ -1,7 +1,7 @@
 import TypeBar from '../components/TypeBar';
 import DeviceList from '../components/DeviceList';
 import BrandBar from './../components/BrandBar';
-
+import '../styles/ShopPage.scss';
 
 const ShopPage = () => {
   return (

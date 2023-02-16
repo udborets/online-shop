@@ -1,4 +1,3 @@
-import "../styles/DevicePage.scss";
 import BuyButton from './../components/BuyButton';
 
 const DevicePage = () => {
@@ -9,7 +8,7 @@ const DevicePage = () => {
     rating: 1,
     img: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
   };
-  
+
   return (
     <div className='current-page device-page'>
       <div className="device-page__main">

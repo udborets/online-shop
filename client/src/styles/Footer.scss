@@ -1,0 +1,13 @@
+.footer {
+  height: 50px;
+  width: 100%;
+  background: var(--bg-div);
+  padding: 10px;
+  outline: 2px solid var(--outline);
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

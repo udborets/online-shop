@@ -1,9 +1,8 @@
 .device-list {
   display: flex;
+  gap: 30px;
   flex-wrap: wrap;
+  justify-content:left;
+  align-items:center;
   width:fit-content;
-  // height: 100%;
-  & .device {
-    margin: 10px 10px 0 0;
-  }
 }

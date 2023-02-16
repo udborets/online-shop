@@ -4,7 +4,7 @@ import { useDevice } from '../hooks/useDevice';
 import { IBrandProps } from '../models/IBrandProps';
 import '../styles/Brand.scss';
 
-const TypeBarType = ({ children, brand }: IBrandProps) => {
+const Brand = ({ children, brand }: IBrandProps) => {
   const { selectBrand } = useDevice();
   const devices = useSelector((state: IStore) => state.device);
 
@@ -18,4 +18,4 @@ const TypeBarType = ({ children, brand }: IBrandProps) => {
   )
 }
 
-export default TypeBarType
+export default Brand

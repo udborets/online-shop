@@ -1,5 +1,6 @@
 import IRegistrationInput from '../models/IRegistrationInput';
 
+
 const RegistrationInput = ({ text, type }: IRegistrationInput) => {
   return (
     <div className='registration__input'>

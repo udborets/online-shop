@@ -1,0 +1,9 @@
+.type-bar {
+  height: fit-content;
+}
+.type-bar__container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}

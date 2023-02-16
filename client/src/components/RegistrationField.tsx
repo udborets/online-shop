@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import '../styles/RegistrationFieldComponent.scss'
 import { RouteConsts } from '../utils/consts';
 import RegistrationInput from './RegistrationInput';
+import '../styles/RegistrationField.scss';
 
 const RegistrationField = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const RegistrationField = () => {
             text={'Введите ваш пароль...'}
           />
         </form>
-        <div className="registration__under-input">
+        <div className="registration__help">
           <span>
             {isLogin ? "Don't have an account?" : "Already have an account?"}
           </span>
@@ -37,7 +37,7 @@ const RegistrationField = () => {
               </NavLink>
           }
           <button>
-            {isLogin ? "Login" : "Create"}
+            {isLogin ? "Login!" : "Create!"}
           </button>
         </div>
       </div>
