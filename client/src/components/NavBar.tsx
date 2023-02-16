@@ -46,6 +46,13 @@ const NavBar = () => {
               </>
           }
         </div>
+
+          <div  className='theme-chooser'>
+            <input defaultChecked className='pink' type="radio" name="theme"/>
+            <input className='peach' type="radio" name="theme"/>
+            <input className='dark' type="radio" name="theme"/>
+          </div>
+
         {
           user.isAuth
             ?

@@ -9,6 +9,7 @@
 
 :root {
   --bg-main: #f5f5f5;
+  --bg-secondary: white;
   --shadow: black;
   --outline: black;
   --text-black: black;
@@ -16,12 +17,62 @@
   --text-link: rgb(255, 255, 255);
   --text-link-hover: rgb(185, 0, 108);
   --text-link-active: rgb(58, 0, 34);
-  --text-blue: blue;
   --bg-div: rgb(253, 153, 195);
   --bg-div-hover: rgb(255, 195, 220);
   --bg-button: rgb(255, 103, 166);
   --bg-button-hover: rgb(255, 126, 180);
   --bg-button-active: rgb(255, 49, 135);
+  --radio-color: black;
+
+  &:has(.pink:checked) {
+    transition-duration: 2s;
+    --text-white: white;
+    --text-black: black;
+    --bg-secondary: rgb(255, 187, 227);
+    --bg-main: rgb(255, 231, 245);
+    --text-link: rgb(255, 225, 242);
+    --text-link-hover: rgb(185, 0, 108);
+    --text-link-active: rgb(58, 0, 34);
+    --bg-div: rgb(253, 153, 195);
+    --bg-div-hover: rgb(255, 195, 220);
+    --bg-button: rgb(255, 103, 166);
+    --bg-button-hover: rgb(255, 126, 180);
+    --bg-button-active: rgb(255, 49, 135);
+  }
+
+  &:has(.peach:checked) {
+    transition-duration: 2s;
+    --text-white: rgb(0, 0, 0);
+    --text-black: black;
+    --bg-main: #fff2d9;
+    --bg-secondary: #ffd891;
+    --text-link: #88621b;
+    --text-link-hover: #4e3d1c;
+    --text-link-active: #7c5203;
+    --bg-div: #ffc457;
+    --bg-div-hover: #ffb731;
+    --bg-button: #ffb326;
+    --bg-button-hover: #ffcc6d;
+    --bg-button-active: #ffa600;
+  }
+
+  &:has(.dark:checked) {
+    transition-duration: 2s;
+    --text-white: white;
+    --text-black: white;
+    --bg-secondary: rgb(129, 129, 129);
+    --bg-main: #5e5e5e;
+    --text-link: rgb(255, 255, 255);
+    --text-link-hover: rgb(119, 119, 119);
+    --text-link-active: rgb(39, 39, 39);
+    --outline: rgb(41, 41, 41);
+    --bg-div: rgb(0, 0, 0);
+    --bg-div-hover: rgb(122, 122, 122);
+    --bg-button: rgb(82, 82, 82);
+    --bg-button-hover: rgb(48, 48, 48);
+    --bg-button-active: rgb(20, 20, 20);
+  }
+
 }
 
 html {
