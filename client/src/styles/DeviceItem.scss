@@ -15,6 +15,7 @@
   position: relative;
   outline: 2px solid var(--outline);
   background: white;
+  padding: 10px;
 
   &:hover {
     transform: translate(2%, 2%);
@@ -40,6 +41,7 @@
 
 .rating__rate {
   font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .rating__img {
@@ -59,4 +61,5 @@
 .device__price {
   font-size: 1.6rem;
   margin: 0 170px 10px 0;
+  font-weight: 700;
 }
