@@ -3,22 +3,28 @@
   width: 100%;
   outline: 2px solid var(--outline);
   background: var(--bg-div);
+
 }
 
 .device__container {
   display: flex;
   flex-direction: column;
+  outline: 2px solid var(--outline);
   justify-content: center;
   align-items: center;
   transform: translate(0%, 0%);
-  transition: transform 0.2s;
+  transition: all 0.5s ease-in-out;
   position: relative;
   outline: 2px solid var(--outline);
-  background: var(--bg-secondary);
   padding: 10px;
+  // background: var(--bg-secondary);
+  background: linear-gradient(47deg, var(--bg-div-active) 0%,
+      var(--bg-div) 50%);
+  background-size: 100%;
 
   &:hover {
     transform: translate(2%, 2%);
+    background-size: 600%;
   }
 }
 
@@ -50,11 +56,12 @@
   width: 45px;
   height: 40px;
   position: absolute;
-  top:2px;
-  left:2px;
+  top: 2px;
+  left: 2px;
 }
 
 .device__rating {
+  margin: 10px 0 0 0;
   height: 50px;
   width: 50px;
   display: flex;

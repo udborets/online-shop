@@ -27,7 +27,6 @@ const DevicePage = () => {
           src={device.img}
           alt=""
         />
-
       </div>
       <div className="device-page__column">
           <RatingStars rating={device.rating}/>

@@ -41,6 +41,8 @@
     width: 100%;
     border-radius: 20px;
     height: 100%;
+    background: var(--bg-main);
+    color: var(--text-black);
 
     &:focus {
       outline: 2px solid var(--outline);
