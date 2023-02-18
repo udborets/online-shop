@@ -5,6 +5,7 @@ const userSlice = createSlice({
   initialState: {
     isAuth: false,
     user: {},
+    isShowingLogout: false,
   },
   reducers: {
     setIsAuth(state, action) {
@@ -13,8 +14,11 @@ const userSlice = createSlice({
     setUser(state, action) {
       state.user = action.payload.user;
     },
+    setIsShowingLogout(state, action) {
+      state.isShowingLogout = action.payload.isShowingLogout;
+    },
   },
 });
 
-export const { setIsAuth, setUser } = userSlice.actions;
+export const { setIsAuth, setUser, setIsShowingLogout } = userSlice.actions;
 export default userSlice.reducer;
