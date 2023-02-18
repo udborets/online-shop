@@ -15,8 +15,8 @@
   --outline: black;
   --text-black: black;
   --text-white: white;
-  --text-link: rgb(255, 255, 255);
-  --text-link-hover: rgb(185, 0, 108);
+  --text-link: rgb(255, 254, 255);
+  --text-link-hover: rgb(250, 66, 173);
   --text-link-active: rgb(58, 0, 34);
   --bg-div: rgb(253, 153, 195);
   --bg-div-hover: rgb(255, 195, 220);
@@ -31,8 +31,8 @@
     --text-black: black;
     --bg-secondary: rgb(255, 187, 227);
     --bg-main: rgb(255, 231, 245);
-    --text-link: rgb(255, 225, 242);
-    --text-link-hover: rgb(185, 0, 108);
+    --text-link: rgb(255, 254, 255);
+    --text-link-hover: rgb(250, 66, 173);
     --text-link-active: rgb(58, 0, 34);
     --bg-div: rgb(253, 153, 195);
     --bg-div-active: rgb(255, 82, 154);
@@ -45,12 +45,12 @@
   &:has(.peach:checked) {
     transition: all .5s ease-in-out;
     // transition-duration: 2s;
-    --text-white: white;
+    --text-white: rgb(3, 3, 3);
     --text-black: black;
     --bg-main: #fff2d9;
-    --bg-secondary: #ffd891;
-    --text-link: #88621b;
-    --text-link-hover: #4e3d1c;
+    --bg-secondary: #4d3200;
+    --text-link: #684609;
+    --text-link-hover: #af7e1d;
     --text-link-active: #7c5203;
     --bg-div: #ffc457;
     --bg-div-hover: #ffb731;
