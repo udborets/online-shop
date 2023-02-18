@@ -42,13 +42,24 @@
 }
 
 .auth-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-link__username {
+  color: var(--text-black);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.auth-link__button {
   font-size: 1.3rem;
   color: var(--text-link);
-  padding: 10px;
   border-radius: 10px;
   text-decoration: underline;
   background: none;
-  margin: 0 0 20px 0;
   transition: color 0.3s;
 
   &:hover {
