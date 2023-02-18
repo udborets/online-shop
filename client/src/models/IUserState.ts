@@ -1,5 +1,7 @@
+import IUser from "./IUser";
+
 export default interface IUserState {
   isAuth: boolean;
-  user: Object;
+  user: IUser;
   isShowingLogout: boolean;
 }
