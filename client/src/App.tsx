@@ -13,7 +13,7 @@ const App = () => {
     <BrowserRouter>
       <LogoutSure
         active={user.user.isShowingLogout}
-        setActive={user.toggleWannaLogout}
+        setActive={user.toggleIsShowingLogout}
       />
       <NavBar />
       <AppRouter />
