@@ -11,25 +11,13 @@ const AdminPage = () => {
   const [deviceActive, setDeviceActive] = useState(false);
 
   return (
-    <div className='current-page'>
-      <AdminButton onClick={() => setDeviceActive(old => !old)} text={'Create device'} />      
-      <AdminButton onClick={() => setTypeActive(old => !old)} text={'Create type'} />      
-      <AdminButton onClick={() => setBrandActive(old => !old)} text={'Create brand'} />      
-      <CreateDevice active={deviceActive} setActive={setDeviceActive} >
-        <div>
-          device
-        </div>
-      </CreateDevice>
-      <CreateType active={typeActive} setActive={setTypeActive} >
-        <div>
-          type
-        </div>
-      </CreateType>
-      <CreateBrand active={brandActive} setActive={setBrandActive} >
-        <div>
-          brand
-        </div>
-      </CreateBrand>
+    <div className='current-page admin-page'>
+      <AdminButton onClick={() => setDeviceActive(old => !old)} text={'Create device'} />
+      <AdminButton onClick={() => setTypeActive(old => !old)} text={'Create type'} />
+      <AdminButton onClick={() => setBrandActive(old => !old)} text={'Create brand'} />
+      <CreateDevice active={deviceActive} setActive={setDeviceActive} />
+      <CreateType active={typeActive} setActive={setTypeActive} />
+      <CreateBrand active={brandActive} setActive={setBrandActive} />
     </div>
   )
 }
