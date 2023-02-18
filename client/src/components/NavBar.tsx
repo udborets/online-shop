@@ -4,7 +4,7 @@ import { useUser } from '../hooks/useUser';
 import '../styles/NavBar.scss';
 
 const NavBar = () => {
-  const { user, toggleUserAuth } = useUser();
+  const { user, toggleWannaLogout } = useUser();
   return (
     <div className='nav-bar'>
       <div className="nav-bar__container">
@@ -58,7 +58,7 @@ const NavBar = () => {
             ?
 
             <button
-              onClick={toggleUserAuth}
+              onClick={toggleWannaLogout}
               className='auth-link'
             >
               Log out
