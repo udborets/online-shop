@@ -1,4 +1,4 @@
-import BuyButton from './../components/BuyButton';
+import BuyButton from '../components/ui/BuyButton';
 import "../styles/DevicePage.scss";
 import '../components/RatingStars';
 import RatingStars from './../components/RatingStars';

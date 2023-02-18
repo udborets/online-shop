@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { RouteConsts } from '../utils/consts';
-import RegistrationInput from './RegistrationInput';
+import RegistrationInput from './ui/RegistrationInput';
 import '../styles/RegistrationField.scss';
 
 const RegistrationField = () => {

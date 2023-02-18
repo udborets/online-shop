@@ -1,4 +1,4 @@
-import AuthButton from './AuthButton';
+import AuthButton from './ui/AuthButton';
 import '../styles/Footer.scss';
 
 const Footer = () => {
