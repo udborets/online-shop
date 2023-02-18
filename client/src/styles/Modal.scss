@@ -3,7 +3,7 @@
   height: 100vh;
   position: fixed;
   z-index: 1000;
-  background: #00000096;
+  background: #000000cb;
   top: 0;
   left: 0;
   display: flex;
@@ -17,13 +17,10 @@
 .modal__container {
   padding: 20px;
   border-radius: 20px;
-  background: white;
+  background: var(--bg-main);
   display: flex;
   flex-direction: column;
   gap: 30px;
-  & * {
-    outline: 1px solid black;
-  }
 }
 
 .modal.active {
