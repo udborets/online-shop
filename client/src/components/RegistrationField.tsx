@@ -4,25 +4,49 @@ import RegistrationInput from './ui/RegistrationInput';
 import '../styles/RegistrationField.scss';
 import { login, registration } from '../http/userApi';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from './../hooks/useUser';
+import { AxiosError } from 'axios';
+import Error from './modals/Error';
+
 
 const RegistrationField = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const isLogin = location.pathname === RouteConsts.LOGIN;
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { toggleUserAuth, changeUser } = useUser();
 
   const authFn = async () => {
+    let data;
     if (isLogin) {
-      const response = await login(email, password);
-      console.log(response)
+      data = await login(email, password);
+      if (data instanceof AxiosError) {
+        setError(data.response?.data?.message);
+        setIsError(true)
+        return
+      }
     }
     else {
-      const response = await registration(email, password);
-      console.log(response)
+      data = await registration(email, password);
+      if (data instanceof AxiosError) {
+        setError(data.response?.data?.message);
+        setIsError(true)
+        return
+      }
     }
+    setEmail('');
+    setPassword('');
+    toggleUserAuth();
+    changeUser(data);
+    navigate('/');
   }
   return (
     <div className='registration'>
+      <Error active={isError} setActive={setIsError} error={error} />
       <div className="registration__container">
         <span className='registration__title'>
           {isLogin ? "Authorization" : "Registration"}
@@ -33,7 +57,7 @@ const RegistrationField = () => {
             text={'Введите ваш email...'}
             value={email}
             setValue={setEmail}
-            />
+          />
           <RegistrationInput
             type={'password'}
             text={'Введите ваш пароль...'}
