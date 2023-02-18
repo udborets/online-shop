@@ -17,11 +17,11 @@
 }
 
 .modal__yes-btn {
-  background: rgb(7, 233, 7);
-  color: black;
+  background: var(--bg-div);
+  color: var(--text-black);
 }
 
 .modal__no-btn {
-  color: white;
-  background: rgb(255, 0, 0);
+  color: var(--text-white);
+  background: rgb(141, 0, 0);
 }
