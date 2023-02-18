@@ -9,7 +9,7 @@ const NavBar = () => {
     <div className='nav-bar'>
       <div className="nav-bar__container">
         <NavLink to={RouteConsts.SHOP} className='nav-bar__title'>
-          Internet shop
+          Online shop
         </NavLink>
         <div className="nav-bar__links">
           {
