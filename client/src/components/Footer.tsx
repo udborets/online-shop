@@ -1,19 +1,21 @@
-import AuthButton from './ui/AuthButton';
 import '../styles/Footer.scss';
 import { useUser } from './../hooks/useUser';
 
 
 const Footer = () => {
-  const user = useUser()
+  const { user, toggleUserAuth } = useUser()
+
   return (
     <div className='footer'>
       <div className="footer__container">
-        <span className="footer__title">
-          Footer
-        </span>
-        <AuthButton />
-        <a href="https://github.com/udborets/">My github</a>
-        <button onClick={() => console.log(user.user)}>Show user info</button>
+        <button
+          onClick={toggleUserAuth}
+        >
+          dev: Now: {user.isAuth ? "auth" : "not auth"}
+        </button>
+        <button onClick={() => console.log(user.user)}>dev: Log user info</button>
+        <a className='footer__link' href="https://t.me/udborets">My Telegram</a>
+        <a className='footer__link' href="https://github.com/udborets/">My Github</a>
       </div>
     </div>
   )

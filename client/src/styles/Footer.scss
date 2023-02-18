@@ -1,5 +1,5 @@
 .footer {
-  height: 50px;
+  height: 60px;
   min-height: 50px;
   width: 100%;
   background: var(--bg-div);
@@ -19,5 +19,15 @@
   }
   & button {
     color: black;
+  }
+}
+
+.footer__link {
+  padding: 9px;
+  transform: translate(0, 0);
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: translate(0, -20%);
   }
 }
