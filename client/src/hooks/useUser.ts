@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setIsAuth } from "../store/userSlice";
+import { setIsAuth, setIsShowingLogout, setUser } from "../store/userSlice";
 import { IStore } from "../models/IStore";
 
 export function useUser() {
@@ -8,5 +8,11 @@ export function useUser() {
   function toggleUserAuth() {
     dispatch(setIsAuth({ isAuth: !user.isAuth }));
   }
-  return { user, toggleUserAuth };
+  function toggleWannaLogout() {
+    dispatch(setIsShowingLogout({ isShowingLogout: !user.isShowingLogout}));
+  }
+  function changeUser(user: any) {
+    dispatch(setUser({user: user}));
+  }
+  return { user, toggleUserAuth, toggleWannaLogout, changeUser};
 }
