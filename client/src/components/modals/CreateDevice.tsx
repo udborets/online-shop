@@ -3,7 +3,7 @@ import '../../styles/Modal.scss';
 import { useDevice } from './../../hooks/useDevice';
 import { useState } from 'react';
 
-const CreateDevice = ({ active, setActive, children }: IModal) => {
+const CreateDevice = ({ active, setActive }: IModal) => {
   const device = useDevice();
   const [info, setInfo] = useState<any>([]);
   const addInfo = () => {
