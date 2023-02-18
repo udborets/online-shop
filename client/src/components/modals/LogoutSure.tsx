@@ -6,22 +6,29 @@ import { useNavigate } from 'react-router-dom';
 
 const LogoutSure = ({ active, setActive }: IModal) => {
   const navigate = useNavigate();
-  const {toggleWannaLogout, toggleUserAuth, changeUser} = useUser();
+  const { toggleIsShowingLogout, toggleUserAuth, changeUser } = useUser();
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
       <div className='modal__container' onClick={e => e.stopPropagation()}>
         Are You sure you want to log out?
-        <button onClick={() => {
-          changeUser({});
-          toggleUserAuth();
-          toggleWannaLogout();
-          navigate('/');
-        }}>
-          Yes
-        </button>
-        <button>
-          No
-        </button>
+        <div className="modal__yes-no">
+          <button
+            className="modal__btn modal__yes-btn"
+            onClick={() => {
+              changeUser({});
+              toggleUserAuth();
+              toggleIsShowingLogout();
+              navigate('/');
+            }}>
+            Yes
+          </button>
+          <button
+            className="modal__btn modal__no-btn"
+            onClick={toggleIsShowingLogout}
+          >
+            No
+          </button>
+        </div>
       </div>
     </div>
   )
