@@ -4,7 +4,7 @@ import { useUser } from '../hooks/useUser';
 import '../styles/NavBar.scss';
 
 const NavBar = () => {
-  const { user, toggleWannaLogout } = useUser();
+  const { user, toggleIsShowingLogout } = useUser();
   return (
     <div className='nav-bar'>
       <div className="nav-bar__container">
@@ -47,25 +47,32 @@ const NavBar = () => {
           }
         </div>
 
-          <div  className='theme-chooser'>
-            <input defaultChecked className='pink' type="radio" name="theme"/>
-            <input className='peach' type="radio" name="theme"/>
-            <input className='dark' type="radio" name="theme"/>
-          </div>
+        <div className='theme-chooser'>
+          <input defaultChecked className='pink' type="radio" name="theme" />
+          <input className='peach' type="radio" name="theme" />
+          <input className='dark' type="radio" name="theme" />
+        </div>
 
         {
           user.isAuth
             ?
-
-            <button
-              onClick={toggleWannaLogout}
-              className='auth-link'
-            >
-              Log out
-            </button>
+            <div
+              className='auth-link'>
+              <span
+                className='auth-link__username'
+              >
+                {user.user.email?.split('@')[0]}
+              </span>
+              <button
+                onClick={toggleIsShowingLogout}
+                className='auth-link__button'
+              >
+                Log out
+              </button>
+            </div>
             :
             <NavLink
-              className='auth-link'
+              className='auth-link__button'
               to={RouteConsts.LOGIN}
             >
               Log in
