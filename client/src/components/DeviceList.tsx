@@ -7,9 +7,11 @@ import { useEffect } from 'react';
 
 const DeviceList = () => {
   const { device, updateDevices } = useDevice();
+
   useEffect(() => {
     updateDevices();
-  }, [])
+  }, [device.devices.length])
+  console.log(device.devices)
   if(!device.devices.length) return <div>There are no devices yet</div>
   return (
     <div className='device-list'>
