@@ -4,4 +4,11 @@ export interface IDevice {
   price: number;
   rating: number;
   img: string;
+  info: [
+    {
+      id: number;
+      title: string;
+      description: string;
+    }
+  ];
 }
