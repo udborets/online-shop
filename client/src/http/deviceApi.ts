@@ -1,5 +1,6 @@
 import { $authHost, $host } from ".";
 import { IBrand } from "../models/IBrand";
+import { IDevice } from "../models/IDevice";
 
 export const createType = async (type: string) => {
   const { data } = await $authHost.post("api/type", { name: type });
@@ -31,7 +32,7 @@ export const fetchDevices = async () => {
   return data;
 };
 
-export const fetchDevice = async (id: number) => {
+export const fetchDevice = async (id: string): Promise<IDevice> => {
   const { data } = await $host.get(`api/device/${id}`);
   return data;
 };
