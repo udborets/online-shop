@@ -1,4 +1,3 @@
-import React from 'react'
 import filledStar from  '../assets/filledStar.png';
 import star from  '../assets/star.png';
 import RatingStarsProps from '../models/IRatingStarsProps';
