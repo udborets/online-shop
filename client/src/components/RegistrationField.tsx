@@ -21,32 +21,34 @@ const RegistrationField = () => {
   const { toggleUserAuth, changeUser } = useUser();
 
   const authFn = async () => {
-    let data;
-    if (isLogin) {
-      data = await login(email, password);
-      if (data instanceof AxiosError) {
-        setError(data.response?.data?.message);
-        setIsError(true)
-        return
+    try {
+      let data;
+      if (isLogin) {
+        data = await login(email, password);
+      }
+      else {
+        data = await registration(email, password);
+      }
+      setEmail('');
+      setPassword('');
+      toggleUserAuth(true);
+      changeUser(data);
+      navigate('/');
+    }
+    catch (err: unknown) {
+      if (err instanceof AxiosError) {
+        setError(err?.response?.data.message);
+        setIsError(true);
       }
     }
-    else {
-      data = await registration(email, password);
-      if (data instanceof AxiosError) {
-        setError(data.response?.data?.message);
-        setIsError(true)
-        return
-      }
-    }
-    setEmail('');
-    setPassword('');
-    toggleUserAuth();
-    changeUser(data);
-    navigate('/');
   }
   return (
     <div className='registration'>
-      <Error active={isError} setActive={setIsError} error={error} />
+      <Error
+        active={isError}
+        setActive={setIsError}
+        errorMessage={error}
+        setError={setError} />
       <div className="registration__container">
         <span className='registration__title'>
           {isLogin ? "Authorization" : "Registration"}
