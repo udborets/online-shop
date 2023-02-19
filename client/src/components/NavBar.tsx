@@ -5,6 +5,7 @@ import '../styles/NavBar.scss';
 
 const NavBar = () => {
   const { user, toggleIsShowingLogout } = useUser();
+
   return (
     <div className='nav-bar'>
       <div className="nav-bar__container">
@@ -48,9 +49,24 @@ const NavBar = () => {
         </div>
 
         <div className='theme-chooser'>
-          <input defaultChecked className='pink' type="radio" name="theme" />
-          <input className='peach' type="radio" name="theme" />
-          <input className='dark' type="radio" name="theme" />
+          <input
+            defaultChecked={localStorage.getItem("color") === "pink"}
+            onClick={() => localStorage.setItem("color", "pink")}
+            className='pink'
+            type="radio"
+            name="theme" />
+          <input
+            defaultChecked={localStorage.getItem("color") === "peach"}
+            onClick={() => localStorage.setItem("color", "peach")}
+            className='peach'
+            type="radio"
+            name="theme" />
+          <input
+            defaultChecked={localStorage.getItem("color") === "dark"}
+            onClick={() => localStorage.setItem("color", "dark")}
+            className='dark'
+            type="radio"
+            name="theme" />
         </div>
 
         {
