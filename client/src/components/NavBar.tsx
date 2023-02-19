@@ -44,6 +44,12 @@ const NavBar = () => {
                 >
                   Shop
                 </NavLink>
+                <NavLink
+                  className='nav-bar__link'
+                  to={RouteConsts.BASKET}
+                >
+                  Basket
+                </NavLink>
               </>
           }
         </div>
