@@ -7,13 +7,13 @@ export const createType = async (type: string) => {
   return data;
 };
 
-export const createBrand = async (brand: string) => {
-  const { data } = await $authHost.post("api/brand", { name: brand });
+export const createBrand = async (brand: any) => {
+  const { data } = await $authHost.post("api/brand", { ...brand});
   return data;
 };
 
-export const createDevice = async (brand: string) => {
-  const { data } = await $authHost.post("api/device", { name: brand });
+export const createDevice = async (device: FormData) => {
+  const { data } = await $authHost.post("api/device", device );
   return data;
 };
 

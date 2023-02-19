@@ -35,7 +35,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
     const formData = new FormData();
     formData.append('name', name);
     formData.append('price', `${price}`);
-    formData.append('img', file, file.name); // THERE IS THE PROBLEM
+    formData.append('img', file); // THERE IS THE PROBLEM
     formData.append('brandId', `${device.device.brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
     formData.append('typeId', `${device.device.types.filter(i => i.name === type)[0].id}`);
     formData.append('info', JSON.stringify(info))

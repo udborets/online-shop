@@ -8,6 +8,7 @@ class DeviceController {
   async create(req, res, next) {
     try {
       let { name, price, brandId, typeId, info } = req.body;
+      console.log(req.files)
       let { img } = req.files;
       const fileName = v4() + '.jpg';
       img.mv(path.resolve(path.resolve(), "server", "..", "static", fileName));
