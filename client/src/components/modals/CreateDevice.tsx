@@ -7,30 +7,30 @@ import { createDevice } from './../../http/deviceApi';
 
 const CreateDevice = ({ active, setActive }: IModal) => {
   const device = useDevice();
-  const [info, setInfo] = useState<IDeviceInfo[]>([]);
+  // const [info, setInfo] = useState<IDeviceInfo[]>([]);
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState(new Blob);
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
-  const addInfo = () => {
-    setInfo([...info, { title: "", description: "", id: Date.now() * Math.random() }])
-  }
+  // const addInfo = () => {
+  //   setInfo([...info, { title: "", description: "", id: Date.now() * Math.random() }])
+  // }
   const changeType = (e: React.SetStateAction<any>) => {
     setType(e.target.value);
   }
   const changeBrand = (e: React.SetStateAction<any>) => {
     setBrand(e.target.value);
   }
-  const deleteInfo = (id: number) => {
-    setInfo(info.filter((i: any) => i.id !== id));
-  }
+  // const deleteInfo = (id: number) => {
+  //   setInfo(info.filter((i: any) => i.id !== id));
+  // }
   const selectFile = (e: React.SetStateAction<any>) => {
     setFile(e.target.files[0])
   }
-  const changeInfo = (key: string, value: string, id: number) => {
-    setInfo(info.map(i => i.id === id ? { ...i, [key]: value } : i))
-  }
+  // const changeInfo = (key: string, value: string, id: number) => {
+  //   setInfo(info.map(i => i.id === id ? { ...i, [key]: value } : i))
+  // }
   const addDevice = () => {
     const formData = new FormData();
     formData.append('name', name);
@@ -38,9 +38,9 @@ const CreateDevice = ({ active, setActive }: IModal) => {
     formData.append('img', file); // THERE IS THE PROBLEM
     formData.append('brandId', `${device.device.brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
     formData.append('typeId', `${device.device.types.filter(i => i.name === type)[0].id}`);
-    formData.append('info', JSON.stringify(info))
+    // formData.append('info', JSON.stringify(info))
     createDevice(formData).then(data => {
-      setInfo([]);
+      // setInfo([]);
       setPrice(0);
       setName('');
       setBrand('');
@@ -89,10 +89,10 @@ const CreateDevice = ({ active, setActive }: IModal) => {
           <span>Choose device image</span>
           <input type="file" onChange={selectFile} />
         </div>
-        <button onClick={addInfo}>
+        {/* <button onClick={addInfo}>
           add info
-        </button>
-        {info.map((i: IDeviceInfo) => {
+        </button> */}
+        {/* {info.map((i: IDeviceInfo) => {
           return (
             <div key={i.id}>
               <input
@@ -108,7 +108,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
               <button onClick={() => deleteInfo(i.id)}> delete prop</button>
             </div>
           )
-        })}
+        })} */}
         <button
           onClick={() => addDevice()}
         >
