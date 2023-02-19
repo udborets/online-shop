@@ -1,8 +1,16 @@
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { IStore } from "../models/IStore";
-import { setSelectedBrand, setSelectedType } from "../store/deviceSlice";
+import {
+  setBrands,
+  setDevices,
+  setSelectedBrand,
+  setSelectedType,
+  setTypes,
+} from "../store/deviceSlice";
 import { IType } from "./../models/IType";
 import { IBrand } from "./../models/IBrand";
+import { IDevice } from "./../models/IDevice";
+import { fetchBrands, fetchDevices, fetchTypes } from "../http/deviceApi";
 
 export function useDevice() {
   const dispatch = useDispatch();
@@ -13,8 +21,33 @@ export function useDevice() {
   const selectBrand = (brand: IBrand) => {
     dispatch(setSelectedBrand({ brand: brand }));
   };
-  const getDeviceById = (id: number) => {
-    return device.devices.filter((device) => device.id === id)[0]
+  const createDevices = (devices: IDevice[]) => {
+    dispatch(setDevices({devices}));
+  };
+  const createBrands = (brands: IBrand[]) => {
+    dispatch(setBrands({brands}));
+  };
+  const createTypes = (types: IType[]) => {
+    dispatch(setTypes({types}));
+  };
+  const updateTypes = () => {
+    fetchTypes().then((fetchedTypes) => createTypes(fetchedTypes))
   }
-  return { device, selectType, selectBrand, getDeviceById };
+  const updateBrands = () => {
+    fetchBrands().then((fetchedBrands) => createBrands(fetchedBrands))
+  }
+  const updateDevices = () => {
+    fetchDevices().then((fetchedDevice) => createBrands(fetchedDevice))
+  }
+  return {
+    device,
+    selectType,
+    selectBrand,
+    createBrands,
+    createDevices,
+    createTypes,
+    updateBrands,
+    updateTypes,
+    updateDevices,
+  };
 }
