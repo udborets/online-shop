@@ -1,17 +1,21 @@
-import { useSelector } from 'react-redux/es/exports';
 import Type from './Type';
-import { IStore } from '../models/IStore';
 import '../styles/TypeBar.scss';
+import { useDevice } from '../hooks/useDevice';
+import { useEffect } from 'react';
 
 const TypeBar = () => {
-  const devices = useSelector((state: IStore) => state.device);
+  const { device, updateTypes } = useDevice()
+  useEffect(() => {
+    updateTypes();
+  }, [device.types.length])
+  if (!device.types.length) return <div>There are no types yet</div>
   return (
     <div className='type-bar'>
       <div className="type-bar__container">
         {
-          devices.types.map((type) => (
+          device.types.map((type) => (
             <Type
-              key={type.id}
+              key={'type' + type.id}
               type={type}
             >
               {type.name}
