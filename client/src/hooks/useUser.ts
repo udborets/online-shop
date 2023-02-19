@@ -8,8 +8,8 @@ export function useUser() {
   function toggleUserAuth(isAuth: boolean) {
     dispatch(setIsAuth({ isAuth }));
   }
-  function toggleIsShowingLogout(isShowing: boolean) {
-    dispatch(setIsShowingLogout({ isShowing }));
+  function toggleIsShowingLogout(isShowingLogout: boolean) {
+    dispatch(setIsShowingLogout({ isShowingLogout }));
   }
   function changeUser(user: any) {
     dispatch(setUser({ user: user }));
