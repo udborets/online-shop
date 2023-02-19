@@ -11,9 +11,7 @@ import LogoutSure from './components/modals/LogoutSure';
 const App = () => {
   const user = useUser();
   const [isLoading, setIsLoding] = useState(false);
-
   useEffect(() => {
-    console.log(user)
     if (localStorage.getItem("token")) {
       setIsLoding(true);
       check()
@@ -21,7 +19,9 @@ const App = () => {
           user.changeUser(data);
           user.toggleUserAuth(true);
         })
-        .finally(() => setIsLoding(false))
+        .finally(() => {
+          setIsLoding(false);
+        })
     }
   }, [])
 
