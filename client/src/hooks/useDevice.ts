@@ -37,7 +37,7 @@ export function useDevice() {
     fetchBrands().then((fetchedBrands) => createBrands(fetchedBrands))
   }
   const updateDevices = () => {
-    fetchDevices().then((fetchedDevice) => createBrands(fetchedDevice))
+    fetchDevices().then((fetchedDevices) => createDevices(fetchedDevices))
   }
   return {
     device,
