@@ -16,15 +16,15 @@ const LogoutSure = ({ active, setActive }: IModal) => {
             className="modal__btn modal__yes-btn"
             onClick={() => {
               changeUser({});
-              toggleUserAuth();
-              toggleIsShowingLogout();
+              toggleUserAuth(false);
+              toggleIsShowingLogout(true);
               navigate('/');
             }}>
             Yes
           </button>
           <button
             className="modal__btn modal__no-btn"
-            onClick={toggleIsShowingLogout}
+            onClick={() => toggleIsShowingLogout(false)}
           >
             No
           </button>

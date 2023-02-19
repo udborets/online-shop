@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='footer'>
       <div className="footer__container">
         <button
-          onClick={toggleUserAuth}
+          onClick={() => toggleUserAuth(!user.isAuth)}
         >
           dev: Now: {user.isAuth ? "auth" : "not auth"}
         </button>

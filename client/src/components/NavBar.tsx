@@ -64,7 +64,7 @@ const NavBar = () => {
                 {user.user.email?.split('@')[0]}
               </span>
               <button
-                onClick={toggleIsShowingLogout}
+                onClick={() => toggleIsShowingLogout(true)}
                 className='auth-link__button'
               >
                 Log out

@@ -5,14 +5,14 @@ import { IStore } from "../models/IStore";
 export function useUser() {
   const user = useSelector((state: IStore) => state.user);
   const dispatch = useDispatch();
-  function toggleUserAuth() {
-    dispatch(setIsAuth({ isAuth: !user.isAuth }));
+  function toggleUserAuth(isAuth: boolean) {
+    dispatch(setIsAuth({ isAuth }));
   }
-  function toggleIsShowingLogout() {
-    dispatch(setIsShowingLogout({ isShowingLogout: !user.isShowingLogout}));
+  function toggleIsShowingLogout(isShowing: boolean) {
+    dispatch(setIsShowingLogout({ isShowing }));
   }
   function changeUser(user: any) {
-    dispatch(setUser({user: user}));
+    dispatch(setUser({ user: user }));
   }
-  return { user, toggleUserAuth, toggleIsShowingLogout, changeUser};
+  return { user, toggleUserAuth, toggleIsShowingLogout, changeUser };
 }
