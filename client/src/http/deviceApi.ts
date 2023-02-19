@@ -8,7 +8,7 @@ export const createType = async (type: string) => {
 };
 
 export const createBrand = async (brand: any) => {
-  const { data } = await $authHost.post("api/brand", { ...brand});
+  const { data } = await $authHost.post("api/brand", { name: brand });
   return data;
 };
 
@@ -29,7 +29,7 @@ export const fetchTypes = async () => {
 
 export const fetchDevices = async () => {
   const { data } = await $host.get("api/device");
-  return data;
+  return data.rows;
 };
 
 export const fetchDevice = async (id: string): Promise<IDevice> => {
