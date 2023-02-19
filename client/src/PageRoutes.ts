@@ -10,14 +10,6 @@ export const authRoutes = [
     path: RouteConsts.ADMIN,
     Component: Admin,
   },
-  {
-    path: RouteConsts.BASKET,
-    Component: BasketPage,
-  },
-  {
-    path: RouteConsts.REGISTRATION,
-    Component: AuthPage,
-  }
 ]
 
 export const publicRoutes = [
@@ -28,6 +20,10 @@ export const publicRoutes = [
   {
     path: RouteConsts.REGISTRATION,
     Component: AuthPage,
+  },
+  {
+    path: RouteConsts.BASKET,
+    Component: BasketPage,
   },
   {
     path: RouteConsts.LOGIN,
