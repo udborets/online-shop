@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LogoutSure = ({ active, setActive }: IModal) => {
   const navigate = useNavigate();
-  const { toggleIsShowingLogout, toggleUserAuth, changeUser } = useUser();
+  const { toggleUserAuth, changeUser } = useUser();
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
       <div className='modal__container' onClick={e => e.stopPropagation()}>
@@ -17,14 +17,15 @@ const LogoutSure = ({ active, setActive }: IModal) => {
             onClick={() => {
               changeUser({});
               toggleUserAuth(false);
-              toggleIsShowingLogout(true);
+              setActive(false);
               navigate('/');
+              localStorage.setItem("token", "");
             }}>
             Yes
           </button>
           <button
             className="modal__btn modal__no-btn"
-            onClick={() => toggleIsShowingLogout(false)}
+            onClick={() => setActive(false)}
           >
             No
           </button>

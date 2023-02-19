@@ -4,11 +4,31 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { useUser } from './hooks/useUser';
 import LogoutSure from './components/modals/LogOutSure';
-
-
+import { useState, useEffect } from 'react';
+import { check } from './http/userApi';
+import './styles/Spinner.scss'
 
 const App = () => {
   const user = useUser();
+  const [isLoading, setIsLoding] = useState(false);
+
+  useEffect(() => {
+    console.log(user)
+    if (localStorage.getItem("token")) {
+      setIsLoding(true);
+      check()
+        .then(data => {
+          user.changeUser(data);
+          user.toggleUserAuth(true);
+        })
+        .finally(() => setIsLoding(false))
+    }
+  }, [])
+
+  if (isLoading) {
+    return <div className="loader"></div>
+  }
+
   return (
     <BrowserRouter>
       <LogoutSure
