@@ -1,19 +1,24 @@
-import { useSelector } from 'react-redux/es/exports';
-import { IStore } from '../models/IStore';
 import Brand from './Brand';
 import '../styles/BrandBar.scss';
+import { useEffect } from 'react';
+import { useDevice } from '../hooks/useDevice';
 
 const BrandBar = () => {
-  const brands = useSelector((state: IStore) => state.device.brands);
+  const { device, updateBrands } = useDevice()
+  useEffect(() => {
+    updateBrands();
+  }, [device.brands.length])
+  if (!device.brands.length) return <div>There are no brands yet</div>
   return (
     <div className='brand-bar'>
       <div className="brand-bar__container">
         {
-          brands.map((brand) => (
+          device.brands.map((brand) => (
             <Brand
-              key={brand.id}
+              key={"brand" + brand.id}
               brand={brand}
             >
+
               {brand.name}
             </Brand>
           ))
