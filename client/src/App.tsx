@@ -3,10 +3,10 @@ import AppRouter from './components/AppRouter';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { useUser } from './hooks/useUser';
-import LogoutSure from './components/modals/LogOutSure';
 import { useState, useEffect } from 'react';
 import { check } from './http/userApi';
 import './styles/Spinner.scss'
+import LogoutSure from './components/modals/LogoutSure';
 
 const App = () => {
   const user = useUser();
