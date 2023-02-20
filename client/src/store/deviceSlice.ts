@@ -6,8 +6,8 @@ const userSlice = createSlice({
     types: [],
     brands: [],
     devices: [],
-    selectedType: {},
-    selectedBrand: {},
+    selectedType: {id: -1, name: 'All'},
+    selectedBrand: {id: -1, name: 'All'},
   },
   reducers: {
     setTypes(state, action) {

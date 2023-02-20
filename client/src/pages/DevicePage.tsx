@@ -2,13 +2,12 @@ import BuyButton from '../components/ui/BuyButton';
 import "../styles/DevicePage.scss";
 import '../components/RatingStars';
 import RatingStars from './../components/RatingStars';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchDevice } from './../http/deviceApi';
 import { useParams } from 'react-router-dom';
 import { IDevice } from '../models/IDevice';
 import { useState, useEffect } from 'react';
 import { RouteConsts } from '../utils/consts';
-import { setSelectedBrand, setSelectedType } from '../store/deviceSlice';
 
 const DevicePage = () => {
   const { id } = useParams();
@@ -32,8 +31,6 @@ const DevicePage = () => {
       .then((fetchedDevice) => {
         setDevice(fetchedDevice);
       })
-    setSelectedBrand({ id: -1, name: 'All' });
-    setSelectedType({ id: -1, name: 'All' });
   }, [])
   return (
     <div className='current-page device-page'>
