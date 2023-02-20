@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import { IDevice } from '../models/IDevice';
 import { useState, useEffect } from 'react';
 import { RouteConsts } from '../utils/consts';
+import { setSelectedBrand, setSelectedType } from '../store/deviceSlice';
 
 const DevicePage = () => {
   const { id } = useParams();
@@ -21,7 +22,9 @@ const DevicePage = () => {
     price: 0,
     rating: 0,
     img: '',
-    info: [{ id: 0, title: '', description: '' }]
+    info: [{ id: 0, title: '', description: '' }],
+    typeId: 0,
+    brandId: 0,
   });
 
   useEffect(() => {
@@ -29,7 +32,9 @@ const DevicePage = () => {
       .then((fetchedDevice) => {
         setDevice(fetchedDevice);
       })
-  })
+    setSelectedBrand({ id: -1, name: 'All' });
+    setSelectedType({ id: -1, name: 'All' });
+  }, [])
   return (
     <div className='current-page device-page'>
       <div className="device-page__main">
