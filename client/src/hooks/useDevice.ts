@@ -31,10 +31,10 @@ export function useDevice() {
     dispatch(setTypes({types}));
   };
   const updateTypes = () => {
-    fetchTypes().then((fetchedTypes) => createTypes(fetchedTypes))
+    fetchTypes().then((fetchedTypes) => createTypes([{id: -1, name: 'All'}, ...fetchedTypes]))
   }
   const updateBrands = () => {
-    fetchBrands().then((fetchedBrands) => createBrands(fetchedBrands))
+    fetchBrands().then((fetchedBrands) => createBrands([{id: -1, name: 'All'}, ...fetchedBrands]))
   }
   const updateDevices = () => {
     fetchDevices().then((fetchedDevices) => createDevices(fetchedDevices))
