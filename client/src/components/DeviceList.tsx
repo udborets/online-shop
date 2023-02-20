@@ -2,21 +2,49 @@ import { IDevice } from './../models/IDevice';
 import Device from './DeviceItem';
 import '../styles/DeviceList.scss';
 import { useDevice } from '../hooks/useDevice';
-import { useEffect } from 'react';
+import { useCallback } from 'react';
 
 
 const DeviceList = () => {
-  const { device, updateDevices } = useDevice();
+  const { device } = useDevice();
+  console.log(device.selectedBrand, device.selectedType)
+  const filterState = useCallback(() => {
+    if (device.selectedBrand.id === -1 && device.selectedType.id === -1) {
+      return device.devices
+    }
+    if (device.selectedBrand.id === -1 && device.selectedType.id !== -1) {
+      return device.devices
+        .filter((currentDevice) =>
+          currentDevice.typeId === device.selectedType.id
+        )
+    }
+    if (device.selectedBrand.id !== -1 && device.selectedType.id === -1) {
+      return device.devices
+        .filter((currentDevice) =>
+          currentDevice.brandId === device.selectedBrand.id
+        )
+    }
+    if (device.selectedBrand.id !== -1 && device.selectedType.id !== -1) {
+      return device.devices
+        .filter((currentDevice) =>
+          currentDevice.brandId === device.selectedBrand.id
+          &&
+          currentDevice.typeId === device.selectedType.id
+        )
+    }
+  }, [device.selectedBrand, device.selectedType]);
 
-  useEffect(() => {
-    updateDevices();
-  }, [device.devices.length])
-  console.log(device.devices)
-  if(!device.devices.length) return <div>There are no devices yet</div>
+
+  // choosedType 
+  // &&
+  // choosedType.id === device.typeId 
+  // &&
+
+  if (!device.devices.length) return <div>There are no devices yet</div>
   return (
     <div className='device-list'>
-      {device.devices.map((device: IDevice) => (
-        <Device key={device.id} device={device}></Device>
+      {filterState()?.map((dev: IDevice) => (
+        <Device key={dev.id} device={dev}></Device>
       ))}
     </div>
   )
