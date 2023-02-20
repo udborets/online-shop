@@ -31,6 +31,9 @@
   transition: background 0.3s;
   outline: 1px solid var(--outline);
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background: var(--bg-button-hover);
