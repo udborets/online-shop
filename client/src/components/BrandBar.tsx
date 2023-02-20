@@ -1,13 +1,9 @@
 import Brand from './Brand';
 import '../styles/BrandBar.scss';
-import { useEffect } from 'react';
 import { useDevice } from '../hooks/useDevice';
 
 const BrandBar = () => {
-  const { device, updateBrands } = useDevice()
-  useEffect(() => {
-    updateBrands();
-  }, [device.brands.length])
+  const { device } = useDevice()
   if (!device.brands.length) return <div>There are no brands yet</div>
   return (
     <div className='brand-bar'>
@@ -18,7 +14,6 @@ const BrandBar = () => {
               key={"brand" + brand.id}
               brand={brand}
             >
-
               {brand.name}
             </Brand>
           ))
