@@ -14,7 +14,7 @@ const DeviceComponent = ({ device }: IDeviceProps) => {
           loading='lazy'
           onClick={() => navigate(RouteConsts.DEVICE + '/' + device.id)}
           className='device__img'
-          src={device.img}
+          src={import.meta.env.VITE_REACT_APP_API_URL + device.img}
           alt="Can't load image" />
         <div className="device__row">
           <div className='device__name'>
