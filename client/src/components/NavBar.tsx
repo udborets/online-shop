@@ -2,10 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { RouteConsts } from '../utils/consts';
 import { useUser } from '../hooks/useUser';
 import '../styles/NavBar.scss';
+import { useLogout } from '../hooks/useLogout';
 
 const NavBar = () => {
-  const { user, toggleIsShowingLogout } = useUser();
-
+  const { isAuth, user } = useUser();
+  const { toggleIsShowingLogout } = useLogout();
   return (
     <div className='nav-bar'>
       <div className="nav-bar__container">
@@ -14,7 +15,7 @@ const NavBar = () => {
         </NavLink>
         <div className="nav-bar__links">
           {
-            user.isAuth
+            isAuth
               ?
               <>
                 <NavLink
@@ -76,14 +77,14 @@ const NavBar = () => {
         </div>
 
         {
-          user.isAuth
+          isAuth
             ?
             <div
               className='auth-link'>
               <span
                 className='auth-link__username'
               >
-                {user.user.email?.split('@')[0]}
+                {user.email?.split('@')[0]}
               </span>
               <button
                 onClick={() => toggleIsShowingLogout(true)}

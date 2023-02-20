@@ -2,37 +2,43 @@ import { IDevice } from './../models/IDevice';
 import Device from './DeviceItem';
 import '../styles/DeviceList.scss';
 import { useDevice } from '../hooks/useDevice';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useBrand } from '../hooks/useBrand';
+import { useType } from '../hooks/useType';
 
 
 const DeviceList = () => {
-  const { device } = useDevice();
-  console.log(device.selectedBrand, device.selectedType)
+  const { devices, updateDevices } = useDevice();
+  const { selectedBrand } = useBrand();
+  const { selectedType } = useType();
+  useEffect(() => {
+    updateDevices();
+  }, [])
   const filterState = useCallback(() => {
-    if (device.selectedBrand.id === -1 && device.selectedType.id === -1) {
-      return device.devices
+    if (selectedBrand.id === -1 && selectedType.id === -1) {
+      return devices
     }
-    if (device.selectedBrand.id === -1 && device.selectedType.id !== -1) {
-      return device.devices
+    if (selectedBrand.id === -1 && selectedType.id !== -1) {
+      return devices
         .filter((currentDevice) =>
-          currentDevice.typeId === device.selectedType.id
+          currentDevice.typeId === selectedType.id
         )
     }
-    if (device.selectedBrand.id !== -1 && device.selectedType.id === -1) {
-      return device.devices
+    if (selectedBrand.id !== -1 && selectedType.id === -1) {
+      return devices
         .filter((currentDevice) =>
-          currentDevice.brandId === device.selectedBrand.id
+          currentDevice.brandId === selectedBrand.id
         )
     }
-    if (device.selectedBrand.id !== -1 && device.selectedType.id !== -1) {
-      return device.devices
+    if (selectedBrand.id !== -1 && selectedType.id !== -1) {
+      return devices
         .filter((currentDevice) =>
-          currentDevice.brandId === device.selectedBrand.id
+          currentDevice.brandId === selectedBrand.id
           &&
-          currentDevice.typeId === device.selectedType.id
+          currentDevice.typeId === selectedType.id
         )
     }
-  }, [device.selectedBrand, device.selectedType]);
+  }, [selectedBrand, selectedType]);
 
 
   // choosedType 
@@ -40,7 +46,7 @@ const DeviceList = () => {
   // choosedType.id === device.typeId 
   // &&
 
-  if (!device.devices.length) return <div>There are no devices yet</div>
+  if (!devices.length) return <div>There are no devices yet</div>
   return (
     <div className='device-list'>
       {filterState()?.map((dev: IDevice) => (

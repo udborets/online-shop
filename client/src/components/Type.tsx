@@ -1,15 +1,12 @@
-import { useSelector } from 'react-redux';
-import { IStore } from '../models/IStore';
 import { ITypeProps } from '../models/ITypeProps';
-import { useDevice } from '../hooks/useDevice';
 import '../styles/Type.scss';
+import { useType } from '../hooks/useType';
 
 const Type = ({ children, type }: ITypeProps) => {
-  const { selectType } = useDevice();
-  const devices = useSelector((state: IStore) => state.device);
+  const { selectType, selectedType } = useType();
   return (
     <div
-      className={type.id === devices.selectedType.id ? 'type-bar__type selected-type' : 'type-bar__type'}
+      className={type.id === selectedType.id ? 'type-bar__type selected-type' : 'type-bar__type'}
       onClick={() => selectType(type)}
     >
       {children}

@@ -7,17 +7,19 @@ import { useState, useEffect } from 'react';
 import { check } from './http/userApi';
 import './styles/Spinner.scss'
 import LogoutSure from './components/modals/LogoutSure';
+import { useLogout } from './hooks/useLogout';
 
 const App = () => {
-  const user = useUser();
+  const { isShowingLogout, changeUser, toggleUserAuth } = useUser();
+  const { toggleIsShowingLogout } = useLogout();
   const [isLoading, setIsLoding] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoding(true);
       check()
         .then(data => {
-          user.changeUser(data);
-          user.toggleUserAuth(true);
+          changeUser(data);
+          toggleUserAuth(true);
         })
         .finally(() => {
           setIsLoding(false);
@@ -32,8 +34,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <LogoutSure
-        active={user.user.isShowingLogout}
-        setActive={user.toggleIsShowingLogout}
+        active={isShowingLogout}
+        setActive={toggleIsShowingLogout}
       />
       <NavBar />
       <AppRouter />

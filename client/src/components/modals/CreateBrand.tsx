@@ -2,11 +2,11 @@ import IModal from './../../models/IModal';
 import '../../styles/Modal.scss';
 import { useState } from 'react';
 import { createBrand } from './../../http/deviceApi';
-import { useDevice } from '../../hooks/useDevice';
+import { useBrand } from './../../hooks/useBrand';
 
 const CreateBrand = ({ active, setActive }: IModal) => {
   const [value, setValue] = useState('');
-  const { updateBrands } = useDevice();
+  const { updateBrands } = useBrand();
   const addBrand = () => {
     createBrand(value)
       .then(() => {

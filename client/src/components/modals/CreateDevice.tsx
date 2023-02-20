@@ -3,20 +3,24 @@ import '../../styles/Modal.scss';
 import { useDevice } from './../../hooks/useDevice';
 import { useState } from 'react';
 import { createDevice } from './../../http/deviceApi';
+import { useBrand } from './../../hooks/useBrand';
+import { useType } from './../../hooks/useType';
 
 const CreateDevice = ({ active, setActive }: IModal) => {
-  const {device, updateDevices } = useDevice();
+  const { updateDevices } = useDevice();
+  const { brands } = useBrand();
+  const { types } = useType();
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState(new Blob);
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
-  
+
   // const [info, setInfo] = useState<IDeviceInfo[]>([]);
   // const addInfo = () => {
   //   setInfo([...info, { title: "", description: "", id: Date.now() * Math.random() }])
   // }
-    // const deleteInfo = (id: number) => {
+  // const deleteInfo = (id: number) => {
   //   setInfo(info.filter((i: any) => i.id !== id));
   // }
   // const changeInfo = (key: string, value: string, id: number) => {
@@ -32,11 +36,11 @@ const CreateDevice = ({ active, setActive }: IModal) => {
     setFile(e.target.files[0]);
   }
   const changePrice = (value: string) => {
-    const numValue = Number.parseInt(value.replace('/r','/'))
+    const numValue = Number.parseInt(value.replace('/r', '/'))
     if (Number.isNaN(numValue)) {
       setPrice(0);
       return;
-    } 
+    }
     setPrice(numValue);
   }
   const addDevice = () => {
@@ -44,8 +48,8 @@ const CreateDevice = ({ active, setActive }: IModal) => {
     formData.append('name', name);
     formData.append('price', `${price}`);
     formData.append('img', file); // THERE IS THE PROBLEM
-    formData.append('brandId', `${device.brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
-    formData.append('typeId', `${device.types.filter(i => i.name === type)[0].id}`);
+    formData.append('brandId', `${brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
+    formData.append('typeId', `${types.filter(i => i.name === type)[0].id}`);
     // formData.append('info', JSON.stringify(info))
     createDevice(formData).then(data => {
       // setInfo([]);
@@ -62,7 +66,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
       <div className='modal__container' onClick={e => e.stopPropagation()}>
         <select value={brand} onChange={changeBrand}>
           <option value="">--select a brand--</option>
-          {device.brands.length && device.brands.map(brand => (
+          {brands.length && brands.map(brand => (
             <option
               value={brand.name}
               key={"brand" + brand.id}
@@ -74,7 +78,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
         </select>
         <select value={type} onChange={changeType}>
           <option>--select a type--</option>
-          {device.types.length && device.types.map(type => (
+          {types.length && types.map(type => (
             <option
               value={type.name}
               key={"type" + type.id}

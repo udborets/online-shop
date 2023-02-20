@@ -2,11 +2,11 @@ import IModal from './../../models/IModal';
 import '../../styles/Modal.scss';
 import { useState } from 'react';
 import { createType } from './../../http/deviceApi';
-import { useDevice } from '../../hooks/useDevice';
+import { useType } from '../../hooks/useType';
 
 const CreateType = ({ active, setActive }: IModal) => {
   const [value, setValue] = useState('');
-  const { updateTypes } = useDevice();
+  const { updateTypes } = useType();
   const addType = () => {
     createType(value)
       .then(() => {
