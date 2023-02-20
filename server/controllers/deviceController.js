@@ -8,9 +8,8 @@ class DeviceController {
   async create(req, res, next) {
     try {
       let { name, price, brandId, typeId, info } = req.body;
-      console.log(req.files)
       let { img } = req.files;
-      const fileName = v4() + '.jpg';
+      const fileName = v4() + '.png';
       img.mv(path.resolve(path.resolve(), "server", "..", "static", fileName));
       const newDevice = await models.Device.create({ name, price, brandId, typeId, img: fileName });
 
