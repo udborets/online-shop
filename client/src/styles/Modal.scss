@@ -21,8 +21,9 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  & input, select {
+  & input[type="text"], button, select {
     padding: 0.2rem 0.5rem;
+    outline: 1px solid black;
   }
 }
 
