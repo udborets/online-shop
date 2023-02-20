@@ -20,8 +20,8 @@ Full-stack PERN `"Online shop"` app
 
 You have to be in that position
 
-```bash
-.
+```
+. <-- You are here 
 └── online-shop/
     ├── server
     └── client
@@ -68,7 +68,7 @@ Install dependencies
   cd ..
   cd client
   npm i
-  cd ..
+  cd ../../
 ```
 ## Run locally in development mode
 
@@ -77,13 +77,13 @@ Run two terminals
 Start server on one
 
 ```bash
-  cd server
+  cd online-shop/server
   npm run dev
 ```
 
 then client on another
 
 ```bash
-  cd client
+  cd online-shop/client
   npm run dev
 ```
