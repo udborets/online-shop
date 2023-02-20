@@ -7,4 +7,6 @@ export interface IDevice {
   rating: number;
   img: string;
   info: [IDeviceInfo];
+  typeId: number;
+  brandId: number;
 }
