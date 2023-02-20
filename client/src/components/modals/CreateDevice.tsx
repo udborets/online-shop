@@ -5,12 +5,13 @@ import { useState } from 'react';
 import { createDevice } from './../../http/deviceApi';
 
 const CreateDevice = ({ active, setActive }: IModal) => {
-  const {device } = useDevice();
+  const {device, updateDevices } = useDevice();
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState(new Blob);
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
+  
   // const [info, setInfo] = useState<IDeviceInfo[]>([]);
   // const addInfo = () => {
   //   setInfo([...info, { title: "", description: "", id: Date.now() * Math.random() }])
@@ -54,6 +55,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
       setType('');
       setFile(new Blob);
     })
+    updateDevices();
   }
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
