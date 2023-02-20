@@ -2,19 +2,24 @@ import IModal from './../../models/IModal';
 import '../../styles/Modal.scss';
 import { useDevice } from './../../hooks/useDevice';
 import { useState } from 'react';
-import IDeviceInfo from './../../models/IDeviceInfo';
 import { createDevice } from './../../http/deviceApi';
 
 const CreateDevice = ({ active, setActive }: IModal) => {
-  const device = useDevice();
-  // const [info, setInfo] = useState<IDeviceInfo[]>([]);
+  const {device } = useDevice();
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState(new Blob);
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
+  // const [info, setInfo] = useState<IDeviceInfo[]>([]);
   // const addInfo = () => {
   //   setInfo([...info, { title: "", description: "", id: Date.now() * Math.random() }])
+  // }
+    // const deleteInfo = (id: number) => {
+  //   setInfo(info.filter((i: any) => i.id !== id));
+  // }
+  // const changeInfo = (key: string, value: string, id: number) => {
+  //   setInfo(info.map(i => i.id === id ? { ...i, [key]: value } : i))
   // }
   const changeType = (e: React.SetStateAction<any>) => {
     setType(e.target.value);
@@ -22,22 +27,24 @@ const CreateDevice = ({ active, setActive }: IModal) => {
   const changeBrand = (e: React.SetStateAction<any>) => {
     setBrand(e.target.value);
   }
-  // const deleteInfo = (id: number) => {
-  //   setInfo(info.filter((i: any) => i.id !== id));
-  // }
   const selectFile = (e: React.SetStateAction<any>) => {
-    setFile(e.target.files[0])
+    setFile(e.target.files[0]);
   }
-  // const changeInfo = (key: string, value: string, id: number) => {
-  //   setInfo(info.map(i => i.id === id ? { ...i, [key]: value } : i))
-  // }
+  const changePrice = (value: string) => {
+    const numValue = Number.parseInt(value.replace('/r','/'))
+    if (Number.isNaN(numValue)) {
+      setPrice(0);
+      return;
+    } 
+    setPrice(numValue);
+  }
   const addDevice = () => {
     const formData = new FormData();
     formData.append('name', name);
     formData.append('price', `${price}`);
     formData.append('img', file); // THERE IS THE PROBLEM
-    formData.append('brandId', `${device.device.brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
-    formData.append('typeId', `${device.device.types.filter(i => i.name === type)[0].id}`);
+    formData.append('brandId', `${device.brands.filter(i => { console.log(i.name); return i.name === brand })[0].id}`);
+    formData.append('typeId', `${device.types.filter(i => i.name === type)[0].id}`);
     // formData.append('info', JSON.stringify(info))
     createDevice(formData).then(data => {
       // setInfo([]);
@@ -53,7 +60,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
       <div className='modal__container' onClick={e => e.stopPropagation()}>
         <select value={brand} onChange={changeBrand}>
           <option value="">--select a brand--</option>
-          {device.device.brands.length && device.device.brands.map(brand => (
+          {device.brands.length && device.brands.map(brand => (
             <option
               value={brand.name}
               key={"brand" + brand.id}
@@ -65,7 +72,7 @@ const CreateDevice = ({ active, setActive }: IModal) => {
         </select>
         <select value={type} onChange={changeType}>
           <option>--select a type--</option>
-          {device.device.types.length && device.device.types.map(type => (
+          {device.types.length && device.types.map(type => (
             <option
               value={type.name}
               key={"type" + type.id}
@@ -83,8 +90,8 @@ const CreateDevice = ({ active, setActive }: IModal) => {
         <input
           placeholder='Enter device price'
           value={price}
-          onChange={(e) => setPrice(Number(e.target.value))}
-          type="number" />
+          onChange={(e) => changePrice(e.target.value)}
+          type="text" />
         <div className="modal__file-choose">
           <span>Choose device image</span>
           <input type="file" onChange={selectFile} />
