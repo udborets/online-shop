@@ -6,12 +6,14 @@ Full-stack PERN `"Online shop"` app
 
 ## Backend
 
-`NodeJS`, `ExprssJS`, `PostgreSQL`
+`Typescript`, `ExprssJS`, `PostgreSQL`, `Prisma`
 
 ## Frontend
 
-`React`, `React Router Dom`, `Typescript`, `React Redux`, `Redux Toolkit`, `Css`, `Scss`
+`Typescript`, `React`, `React RTK`, `Scss`
+
 # Setting up app
+
 ## Cloning repository
 
 ```bash
