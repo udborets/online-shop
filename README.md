@@ -2,11 +2,12 @@
 # Online shop
 
 Full-stack PERN `"Online shop"` app
+
 # App stack
 
 ## Backend
 
-`Typescript`, `ExprssJS`, `PostgreSQL`, `Prisma`
+`Typescript`, `ExprssJS`, `PostgreSQL`
 
 ## Frontend
 
